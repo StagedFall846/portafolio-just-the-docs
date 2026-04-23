@@ -1,5 +1,5 @@
 title: Portafolio Estefania 
-description: Repositorio base para enseñar y crear documentación en GitHub Pages con Just the Docs
+description: Repositorio base para mi portafolio de ingeniería en GitHub Pages con Just the Docs
 
 # GitHub Pages: modo recomendado
 remote_theme: just-the-docs/just-the-docs
@@ -8,13 +8,10 @@ plugins:
   - jekyll-seo-tag
 
 # IMPORTANTES:
-# - Para GitHub Pages (Project Page), edita:
-#     url: "https://TU_USUARIO.github.io"
-#     baseurl: "/NOMBRE_DEL_REPO"
-url: "https://Estefania-Cruz.github.io"
+url: "https://StagedFall846.github.io"
 baseurl: "/portafolio-just-the-docs"
 
-#Configuracion Formato, Header y Footer
+# Configuracion Formato, Header y Footer
 just_the_docs:
   # incluir CSS adicional
   custom_css:
@@ -29,7 +26,7 @@ search:
 # Ejemplo de enlace auxiliar (aparece arriba a la derecha)
 aux_links:
   "Repositorio en GitHub":
-    - "https://github.com/Estefania-Cruz/portafolio-just-the-docs"
+    - "https://github.com/StagedFall846/portafolio-just-the-docs"
 
 # Enlaces
 permalink: pretty
