@@ -1,5 +1,5 @@
-title: Portafolio Estefania 
-description: Repositorio base para mi portafolio de ingeniería en GitHub Pages con Just the Docs
+title: "Portafolio de Ingeniería"
+description: "Mecatrónica y Control Inteligente | Estefania Cruz"
 
 # GitHub Pages: modo recomendado
 remote_theme: just-the-docs/just-the-docs
@@ -11,24 +11,26 @@ plugins:
 url: "https://StagedFall846.github.io"
 baseurl: "/portafolio-just-the-docs"
 
-# Configuracion Formato, Header y Footer
+# Configuración de Estilo
+color_scheme: "light" # Mantiene el fondo blanco
+syntax_highlighter: rouge
+
+# Configuración Just the Docs
 just_the_docs:
-  # incluir CSS adicional
   custom_css:
     - "assets/css/custom.css"
-  footer_content: "Estefania Cruz"
+  footer_content: "Estefania Cruz Fragoso"
 
 search_enabled: true
 search:
-  # Cambia el numero dependiendo el numero de subniveles de páginas, poner 1 por default
   heading_level: 2
 
-# Ejemplo de enlace auxiliar (aparece arriba a la derecha)
+# Enlace al repositorio original
 aux_links:
-  "Repositorio en GitHub":
-    - "https://github.com/StagedFall846/portafolio-just-the-docs"
+  "Mi GitHub":
+    - "https://github.com/StagedFall846"
 
-# Enlaces
+# Enlaces limpios
 permalink: pretty
 
 exclude:
