@@ -2,12 +2,22 @@
 layout: default
 title: Inicio
 nav_order: 1
+description: "Recursos y ejercicios prácticos para el laboratorio de Control Inteligente y Robótica."
 ---
 
-# Portafolio Profesional: Estefania Cruz
+# 📚 Repositorio de Ejercicios: Control y Robótica
+Bienvenido al repositorio de materiales de clase. Aquí encontrarás la documentación, scripts de MATLAB y modelos de Simulink organizados por temas.
 
-¡Bienvenida/o! Soy estudiante de **Ingeniería en Mecatrónica y Producción** en la Universidad Iberoamericana (IBERO). 
+## 🎯 Objetivo de este sitio
+Este espacio sirve como guía técnica para la implementación de algoritmos de control. Cada sección incluye:
+- **Explicación del problema:** Contexto físico o matemático.
+- **Implementación:** Código documentado.
+- **Resultados:** Análisis de lo obtenido.
 
+## 🛠️ Herramientas utilizadas
+- **MATLAB R2024a**
+- **Simulink**
+- **Deep Learning / Fuzzy Logic Toolbox**
 
 ---
-*Contacto: Álvaro Obregón, Ciudad de México*
+*Selecciona un tema en el menú de la izquierda para comenzar con los ejercicios.*
