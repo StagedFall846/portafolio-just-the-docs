@@ -5,16 +5,16 @@ nav_order: 1
 description: "Recursos y ejercicios prácticos para el laboratorio de Control Inteligente."
 ---
 
-# 📚 Repositorio de Ejercicios: Control Inteligente
+# Repositorio de Ejercicios: Control Inteligente
 Bienvenido al repositorio de materiales del laboratorio de **Control Inteligente**. Aquí encontrarás todo el contenido necesario para el aprendizaje práctico de los algoritmos de control, incluyendo documentación, scripts de MATLAB y modelos de Simulink organizados por temas.
 
-## 🎯 Objetivo de este sitio
+## Objetivo de este sitio
 Este espacio está diseñado para proporcionar los recursos y guías técnicas necesarios para implementar y entender diversos algoritmos de control. Cada ejercicio está compuesto por:
 - **Explicación del problema:** Contexto físico o matemático que aborda el ejercicio.
 - **Implementación:** Código documentado en MATLAB o Simulink.
 - **Resultados y análisis:** Evaluación de los resultados obtenidos, junto con una interpretación detallada de los mismos.
 
-## 📋 Ejercicio: Control de un Sistema Dinámico No Lineal
+## Ejercicio: Control de un Sistema Dinámico No Lineal
 ### Descripción del ejercicio
 En este ejercicio, se busca modelar y controlar un sistema dinámico no lineal que simula un sistema físico real, como un brazo robótico o un vehículo autónomo. El objetivo es aplicar un **algoritmo de control adaptativo** para estabilizar el sistema y minimizar el error entre la salida deseada y la salida real.
 
