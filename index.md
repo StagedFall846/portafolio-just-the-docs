@@ -11,7 +11,7 @@ Bienvenido al repositorio oficial de recursos prácticos para la asignatura. Est
 
 ---
 
-## 🛠️ Estructura del curso
+## Estructura del curso
 El contenido está organizado por capítulos temáticos para guiar el aprendizaje de manera progresiva:
 
 * **Capítulo 1: Redes Neuronales** – Implementación de modelos bio-inspirados y algoritmos de aprendizaje.
