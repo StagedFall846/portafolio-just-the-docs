@@ -2,10 +2,10 @@
 layout: default
 title: Inicio
 nav_order: 1
-description: "Recursos y ejercicios prácticos para el laboratorio de Control Inteligente y Robótica."
+description: "Recursos y ejercicios prácticos para el laboratorio de Control Inteligente."
 ---
 
-# 📚 Repositorio de Ejercicios: Control y Robótica
+# 📚 Repositorio de Ejercicios: Control Inteligente
 Bienvenido al repositorio de materiales de clase. Aquí encontrarás la documentación, scripts de MATLAB y modelos de Simulink organizados por temas.
 
 ## 🎯 Objetivo de este sitio
