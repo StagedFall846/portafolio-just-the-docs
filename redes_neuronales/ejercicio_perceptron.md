@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Ejercicio 1 - Perceptrón Simple
-parent: Capítulo 1: Redes Neuronales
+parent: Capítulo 1 : Redes Neuronales
 nav_order: 1
 ---
 
