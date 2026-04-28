@@ -1,50 +1,91 @@
 /* ========================================= */
-/* 🧱 BLOQUE DE CÓDIGO (FONDO NEGRO) */
+/* 🏛️ LOGO Y HEADER (FIX PARA LA IBERO) */
 /* ========================================= */
+
+/* Forzamos que el header sea vertical para que el logo no tape el texto */
+.site-header {
+  display: flex !important;
+  flex-direction: column !important; 
+  align-items: flex-start !important;
+  padding: 2rem 1.5rem !important;
+  height: auto !important;
+}
+
+.site-logo {
+  max-height: 80px !important; /* Un poco más grande para que luzca el logo de la IBERO */
+  width: auto;
+  margin-bottom: 1rem !important;
+  display: block !important;
+}
+
+/* Quitamos la posición absoluta del título que causaba el encimado */
+.site-title {
+  position: relative !important;
+  margin-top: 0 !important;
+}
+
+/* ========================================= */
+/* 🧾 BLOQUES DE CÓDIGO (ESTILO MARKED) */
+/* ========================================= */
+
 div.highlighter-rouge pre,
 .highlight pre {
-    background-color: #0d1117 !important; /* Negro tipo GitHub */
-    color: #c9d1d9 !important;           /* Texto base gris claro */
-    border-radius: 12px;
-    padding: 1.5rem;
-    border: 1px solid #30363d;
+  background-color: #0d1117 !important; /* Fondo oscuro para que resalte el blanco */
+  color: #c9d1d9 !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ========================================= */
-/* ✨ EFECTO DE RESALTADO BLANCO EN EL TEXTO */
-/* ========================================= */
-/* Esto obliga a CADA fragmento de texto a tener fondo blanco */
+/* ✨ ESTE ES EL RESALTADO BLANCO QUE QUERÍAS */
+/* Aplicamos fondo blanco a cada elemento de texto dentro del código */
 .highlight span {
-    background-color: #ffffff !important; /* Fondo blanco para las letras */
-    color: #000000 !important;           /* Letras negras para que se lean sobre blanco */
-    padding: 1px 3px;                    /* Pequeño espacio alrededor de cada letra */
-    border-radius: 3px;                  /* Bordes suaves para el resaltado */
+  background-color: #ffffff !important; 
+  color: #000000 !important; /* Letra negra para que se lea sobre el blanco */
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin: 0 1px;
 }
 
-/* Ajuste específico para que los espacios vacíos no se marquen */
+/* Evitamos que el resaltado blanco se aplique a los espacios vacíos */
 .highlight .w {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 /* ========================================= */
-/* 🏛️ ARREGLO LOGO IBERO (NO ENCIMADO) */
+/* 🌐 AJUSTES GENERALES DE CONTENIDO */
 /* ========================================= */
-/* Usamos selectores fuertes para forzar el cambio */
-body .site-header {
-    display: flex !important;
-    flex-direction: column !important; /* Logo arriba, texto abajo */
-    align-items: flex-start !important;
-    padding: 2rem 1rem !important;     /* Más espacio superior */
-    height: auto !important;           /* Deja que crezca según el logo */
+
+.main-content {
+  margin-top: 30px;
+  line-height: 1.6;
 }
 
-body .site-logo {
-    margin-bottom: 1rem !important;    /* Espacio debajo del logo */
-    max-width: 180px !important;       /* Tamaño controlado */
+.main-content h1 {
+  font-weight: 700;
+  color: #24292f;
+  margin-top: 1rem;
 }
 
-body .site-title {
-    position: relative !important;     /* Quita el encimado absoluto */
-    margin-top: 0 !important;
-    display: block !important;
+/* Código inline (fuera de bloques grandes) */
+code {
+  background-color: #f6f8fa;
+  color: #cf222e;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-family: Consolas, monospace;
+}
+
+/* ========================================= */
+/* 🛠️ LISTAS Y OBJETIVOS */
+/* ========================================= */
+
+.main-content ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.main-content li {
+  margin-bottom: 0.6rem;
 }
