@@ -2,107 +2,96 @@
 % Proyecto: Clasificación de la función lógica OR
 % Objetivo: Encontrar la frontera de decisión linealmente separable
 
-clear;  % Limpiar las variables previas
-clc;    % Limpiar la ventana de comandos
-close all;  % Cerrar cualquier ventana de gráfico abierta
+clear; 
+clc; 
+close all;
 
 %% 1. Configuración del Set de Entrenamiento
-x1 = [0 1 0 1];  % Entradas x1 de la función OR
-x2 = [0 0 1 1];  % Entradas x2 de la función OR
-t = [-1 1 1 1];  % Salidas deseadas para la función OR
-
-% Se definen las entradas (x1, x2) y las salidas deseadas (t) según la tabla de verdad de la función OR:
-% La salida debe ser -1 cuando (x1, x2) = (0, 0), y 1 para los demás casos.
+% Entradas x1, x2 y las salidas deseadas t para la función OR
+x1 = [0 1 0 1];
+x2 = [0 0 1 1];
+t = [-1 1 1 1]; % Salida deseada para cada combinación de entradas
 
 %% 2. Parámetros iniciales
-w = [0.0679 0.0758 0.0743];  % Pesos iniciales [w0 (sesgo), w1, w2]
-eps = 0.01;  % Tasa de aprendizaje (coeficiente de velocidad)
-epoca = 0;  % Inicialización de la variable de época (iteración)
-lim_ep = 20;  % Límite máximo de épocas (número de iteraciones)
+% Inicializamos los pesos aleatoriamente, el coeficiente de aprendizaje y las épocas
+w = [0.0679 0.0758 0.0743]; % Pesos iniciales
+eps = 0.01; % Tasa de aprendizaje
+epoca = 0; % Contador de épocas
+lim_ep = 20; % Límite máximo de épocas
 
-x1v = -1.5:0.01:1.5;  % Rango de valores para graficar la frontera de decisión
-
-% Se establecen los parámetros de entrenamiento, incluyendo la tasa de aprendizaje y los pesos iniciales. 
-% Además, el límite de épocas es 20, lo que significa que el algoritmo intentará aprender durante 20 iteraciones como máximo.
+% Rango de valores para graficar la frontera de decisión
+x1v = -1.5:0.01:1.5;
 
 %% 3. Gráfica inicial
-figure(1);  % Crear una nueva figura para graficar
-hold on;  % Mantener la gráfica para agregar más elementos
-grid on;  % Activar la cuadrícula en el gráfico
-
-title('Entrenamiento del Perceptrón - OR');  % Título del gráfico
-xlabel('x1');  % Etiqueta del eje x
-ylabel('x2');  % Etiqueta del eje y
-
-% Graficamos los puntos de entrada de acuerdo con su clase (t).
-% Los puntos donde t = 1 se grafican en azul, y donde t = -1 se grafican en rojo.
-
+% Visualizamos el conjunto de datos (entradas x1, x2) con sus correspondientes salidas
+figure(1);
+hold on;
+grid on;
 for p = 1:length(t)
     if t(p) == 1
-        plot(x1(p), x2(p), 'ob', 'LineWidth', 3, 'MarkerFaceColor', 'b');  % Puntos positivos (1) en azul
+        plot(x1(p), x2(p), 'ob', 'LineWidth', 3); % Puntos positivos (Clase 1)
     else
-        plot(x1(p), x2(p), 'or', 'LineWidth', 3, 'MarkerFaceColor', 'r');  % Puntos negativos (-1) en rojo
+        plot(x1(p), x2(p), 'or', 'LineWidth', 3); % Puntos negativos (Clase -1)
     end
 end
+title('Entrenamiento del Perceptrón - Función OR');
+xlabel('x1');
+ylabel('x2');
 
-%% 4. Entrenamiento
-for i = 1:lim_ep  % Entrenamos durante un número máximo de épocas
+%% 4. Proceso de Entrenamiento
+% Aquí realizamos el entrenamiento iterativo del Perceptrón
+for i = 1:lim_ep
     
-    vector_error = [];  % Lista para almacenar los errores en cada iteración
+    % Vector de errores de cada iteración
+    vector_error = [];
     
-    % Para cada punto de entrenamiento, aplicamos el algoritmo de ajuste de pesos.
-    for j = 1:length(t)  % Iteramos sobre cada punto de la tabla de verdad
-        % Construcción del vector de entradas [1, x1(j), x2(j)] (incluye el sesgo)
-        X = [1 x1(j) x2(j)]; 
+    % Iteración sobre el conjunto de entrenamiento
+    for j = 1:length(t)
+        % Vector de entrada, con un 1 añadido para el sesgo (bias)
+        X = [1 x1(j) x2(j)];
+        % Producto punto entre los pesos y el vector de entrada
+        V = w * X';
         
-        % Cálculo de la salida del perceptrón (producto punto de los pesos y las entradas)
-        V = w * X';  % Producto punto entre pesos y entradas
-        
-        % Función de activación: Determina la salida según el valor de V
+        % Decisión: si V > 0, clasificación positiva (y = 1); si V <= 0, clasificación negativa (y = -1)
         if V > 0
-            y = 1;  % Salida positiva (1)
+            y = 1;
         elseif V == 0
-            y = 0;  % Si V es cero, asignamos 0 (no es común, pero lo dejamos para seguridad)
-        else
-            y = -1;  % Salida negativa (-1)
+            y = 0;
+        else 
+            y = -1;
         end
         
-        % Cálculo del error (diferencia entre la salida esperada t(j) y la salida obtenida y)
+        % Cálculo del error: diferencia entre la salida deseada t(j) y la salida predicha y
         e = t(j) - y;
         
-        % Actualización de los pesos (Regla de aprendizaje del perceptrón)
-        w = w + eps * X * e;  % Ajuste de los pesos en función del error
+        % Actualización de los pesos
+        w = w + eps * X * e;
         
-        vector_error = [vector_error e];  % Guardamos el error para análisis posterior
+        % Guardamos el error para ver si el algoritmo converge
+        vector_error = [vector_error e];
     end
-
-    % Graficamos la frontera de decisión en función de los pesos actualizados
-    x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));  % Ecuación de la recta (frontera de decisión)
-    plot(x1v, x2v, 'Color', [0.5 0.5 0.5], 'LineWidth', 1);  % Dibujamos la frontera de decisión
-
-    % Configuramos los límites de la gráfica
-    axis([-1 1 -1 1]);  % Definimos los límites de la gráfica
-    axis square;  % Aseguramos que los ejes sean proporcionales
-
-    % Verificamos si el error es cero, lo que significa que hemos alcanzado la convergencia
+    
+    % Calculamos la nueva frontera de decisión
+    x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));
+    plot(x1v, x2v, 'LineWidth', 1.5);
+    
+    % Ajuste de los límites de la gráfica
+    axis([-1 1 -1 1]);
+    axis square;
+    axis tight;
+    
+    % Verificación de convergencia (si el error total es cero, se detiene el entrenamiento)
     if norm(vector_error) == 0
-        plot(x1v, x2v, 'g', 'LineWidth', 2.5);  % Mostrar la frontera de decisión final en verde
-        fprintf('Condición alcanzada en la época: %d\n', epoca);  % Mostrar mensaje de convergencia
-        break  % Detener el entrenamiento si hemos encontrado la solución
+        disp('Condición alcanzada: el perceptrón ha convergido.');
+        break;
     end
-
-    epoca = epoca + 1;  % Aumentamos el contador de épocas
-    pause(0.1);  % Pausamos brevemente para ver la evolución del gráfico
+    
+    % Incremento de la época
+    epoca = epoca + 1;
+    pause(1); % Pausa para visualizar el proceso
 end
 
 %% 5. Resultado
-fprintf('\n-----------------------------\n');
-
-if norm(vector_error) ~= 0
-    disp('No convergió.');  % Si el error no es cero, el algoritmo no ha convergido
-else
-    disp('Entrenamiento exitoso.');  % Si el error es cero, el entrenamiento fue exitoso
-end
-
-fprintf('Pesos finales: %.4f %.4f %.4f\n', w(1), w(2), w(3));  % Mostrar los pesos finales
-fprintf('-----------------------------\n');
+% Verificación del resultado final y de los pesos obtenidos
+fprintf('Entrenamiento exitoso.\n');
+fprintf('Pesos finales: %.4f %.4f %.4f\n', w(1), w(2), w(3));
