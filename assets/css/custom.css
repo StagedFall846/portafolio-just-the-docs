@@ -2,37 +2,25 @@
 % Proyecto: Clasificación de la función lógica OR
 % Objetivo: Encontrar la frontera de decisión linealmente separable.
 
-clear;
-clc;
-close all;
+clear; clc; close all;
 
 %% 1. Configuración del Set de Entrenamiento (Teacher)
-% Entradas: x1, x2 | Salida esperada: t
 x1 = [0 1 0 1];
 x2 = [0 0 1 1];
 t = [-1 1 1 1]; % Salida deseada (-1: Falso, 1: Verdadero)
 
 %% 2. Condiciones Iniciales y Parámetros
-% Pesos sinápticos iniciales [w0=bias, w1=x1, w2=x2]
 w = [0.0679 0.0758 0.0743]; 
-
-% Hiperparámetros de entrenamiento
-eps = 0.01;      % Coeficiente de velocidad (Learning Rate)
-epoca = 0;       % Contador de épocas
-lim_ep = 20;     % Límite máximo de iteraciones para evitar bucles infinitos
-
-% Vector auxiliar para graficar la frontera de decisión
+eps = 0.01;      % Learning Rate
+epoca = 0;       
+lim_ep = 20;     
 x1v = [-1.5:0.01:1.5];
 
 %% 3. Inicialización de la Gráfica
-figure(1);
-hold on;
-grid on;
+figure(1); hold on; grid on;
 title('Entrenamiento del Perceptrón - Función Lógica OR');
-xlabel('Entrada x1');
-ylabel('Entrada x2');
+xlabel('Entrada x1'); ylabel('Entrada x2');
 
-% Visualización de los puntos de entrenamiento (Azul: Verdadero, Rojo: Falso)
 for p = 1:length(t)
     if t(p) == 1
         plot(x1(p), x2(p), 'ob', 'LineWidth', 3, 'MarkerFaceColor', 'b');
@@ -41,19 +29,15 @@ for p = 1:length(t)
     end
 end
 
-%% 4. Ciclo de Entrenamiento (Proceso Iterativo)
+%% 4. Ciclo de Entrenamiento
 for i = 1:lim_ep
     flag = 0;
     vector_error = [];
     
     for j = 1:length(t)
-        % Construcción del vector de entrada con bias (X0 = 1)
         X = [1 x1(j) x2(j)];
-        
-        % Potencial de activación (Suma ponderada)
         V = w * X';
         
-        % Función de Activación: Signo
         if V > 0
             y = 1;
         elseif V == 0
@@ -62,43 +46,30 @@ for i = 1:lim_ep
             y = -1;
         end
         
-        % Cálculo del error (Deseado - Obtenido)
         e = t(j) - y;
-        
-        % Regla de Aprendizaje del Perceptrón: Actualización de pesos
         w = w + eps * X * e;
-        
-        % Almacenamiento del error para verificar convergencia
         vector_error = [vector_error e];
     end
     
-    % Cálculo de la recta de separación (Frontera de Decisión)
-    % Derivada de: w0 + w1*x1 + w2*x2 = 0
     x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));
-    
-    % Dibujar la evolución de la frontera en cada época
     plot(x1v, x2v, 'Color', [0.5 0.5 0.5, 0.3], 'LineWidth', 1); 
-    axis([-1 1 -1 1]);
-    axis square;
+    axis([-1 1 -1 1]); axis square;
     
-    % Verificación de convergencia (Si la norma del error es cero)
     if norm(vector_error) == 0
         flag = 1;
-        plot(x1v, x2v, 'g', 'LineWidth', 2.5); % Frontera final exitosa en verde
+        plot(x1v, x2v, 'g', 'LineWidth', 2.5);
         fprintf('Convergencia alcanzada en la época: %d\n', epoca);
         break
     end
     
     epoca = epoca + 1;
-    pause(0.2); % Pausa para visualizar la animación del aprendizaje
+    pause(0.2); 
 end 
 
 %% 5. Reporte de Resultados
-fprintf('\n-------------------------------------------\n');
 if flag == 0
-    disp('Resultado: El entrenamiento no alcanzó convergencia total.');
+    disp('Resultado: Entrenamiento incompleto.');
 else
-    disp('Resultado: El modelo ha aprendido la función correctamente.');
+    disp('Resultado: Entrenamiento exitoso.');
 end
 fprintf('Pesos Finales: w0=%.4f, w1=%.4f, w2=%.4f\n', w(1), w(2), w(3));
-fprintf('-------------------------------------------\n');
