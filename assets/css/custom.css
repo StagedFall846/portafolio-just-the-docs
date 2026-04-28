@@ -2,7 +2,6 @@
 /* 🏛️ LOGO Y HEADER (FIX PARA LA IBERO) */
 /* ========================================= */
 
-/* Forzamos que el header sea vertical para que el logo no tape el texto */
 .site-header {
   display: flex !important;
   flex-direction: column !important; 
@@ -12,49 +11,51 @@
 }
 
 .site-logo {
-  max-height: 80px !important; /* Un poco más grande para que luzca el logo de la IBERO */
+  max-height: 80px !important;
   width: auto;
   margin-bottom: 1rem !important;
   display: block !important;
 }
 
-/* Quitamos la posición absoluta del título que causaba el encimado */
 .site-title {
   position: relative !important;
   margin-top: 0 !important;
 }
 
 /* ========================================= */
-/* 🧾 BLOQUES DE CÓDIGO (ESTILO MARKED) */
+/* 🧾 BLOQUES DE CÓDIGO (GRIS CLARO) */
 /* ========================================= */
 
 div.highlighter-rouge pre,
 .highlight pre {
-  background-color: #0d1117 !important; /* Fondo oscuro para que resalte el blanco */
-  color: #c9d1d9 !important;
+  background-color: #d3d3d3 !important; /* El gris claro que pediste */
+  color: #24292f !important;            /* Texto base oscuro para contraste */
   border-radius: 12px;
   padding: 1.5rem;
-  border: 1px solid #30363d;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #bcbcbc !important; /* Borde sutil */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
 }
 
-/* ✨ ESTE ES EL RESALTADO BLANCO QUE QUERÍAS */
-/* Aplicamos fondo blanco a cada elemento de texto dentro del código */
+/* ❌ ELIMINAMOS EL RESALTADO BLANCO */
 .highlight span {
-  background-color: #ffffff !important; 
-  color: #000000 !important; /* Letra negra para que se lea sobre el blanco */
-  padding: 2px 4px;
-  border-radius: 3px;
-  margin: 0 1px;
-}
-
-/* Evitamos que el resaltado blanco se aplique a los espacios vacíos */
-.highlight .w {
-  background-color: transparent !important;
+  background-color: transparent !important; /* Sin fondo en las letras */
+  padding: 0 !important;
 }
 
 /* ========================================= */
-/* 🌐 AJUSTES GENERALES DE CONTENIDO */
+/* 🎨 SINTAXIS (AJUSTADA PARA FONDO CLARO) */
+/* ========================================= */
+
+.highlight .k  { color: #d73a49 !important; } /* Keywords (clear, clc) - Rojo fuerte */
+.highlight .s  { color: #005cc5 !important; } /* Strings - Azul fuerte */
+.highlight .c  { color: #6a737d !important; } /* Comentarios - Gris medio */
+.highlight .nf { color: #6f42c1 !important; } /* Funciones (plot, figure) - Morado */
+.highlight .nb { color: #e36209 !important; } /* Built-ins - Naranja */
+.highlight .m  { color: #005cc5 !important; } /* Números - Azul */
+
+/* ========================================= */
+/* 🌐 AJUSTES GENERALES */
 /* ========================================= */
 
 .main-content {
@@ -62,24 +63,12 @@ div.highlighter-rouge pre,
   line-height: 1.6;
 }
 
-.main-content h1 {
-  font-weight: 700;
-  color: #24292f;
-  margin-top: 1rem;
-}
-
-/* Código inline (fuera de bloques grandes) */
 code {
   background-color: #f6f8fa;
   color: #cf222e;
   padding: 0.2rem 0.4rem;
   border-radius: 6px;
-  font-family: Consolas, monospace;
 }
-
-/* ========================================= */
-/* 🛠️ LISTAS Y OBJETIVOS */
-/* ========================================= */
 
 .main-content ul {
   margin-bottom: 1.5rem;
