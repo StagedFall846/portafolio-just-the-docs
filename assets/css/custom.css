@@ -1,27 +1,39 @@
-/* 🧾 BLOQUES DE CÓDIGO (FONDO NEGRO SOLO AQUÍ) */
-pre, pre.highlight, div.highlighter-rouge pre {
-  background-color: #0d1117 !important; /* negro tipo GitHub */
-  color: #c9d1d9 !important;
-  border-radius: 10px;
-  padding: 16px;
+/* 🧾 BLOQUES DE CÓDIGO */
+div.highlighter-rouge pre,
+.highlight pre {
+  background-color: #0d1117;
+  color: #e6edf3;
+  border-radius: 12px;
+  padding: 1.25rem;
   overflow-x: auto;
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
-/* 🎨 Código dentro del bloque */
-code {
-  background-color: transparent !important;
-  color: #c9d1d9 !important;
+/* 🎨 SOLO código dentro de bloques */
+.highlight code {
+  background: transparent;
+  color: inherit;
   font-family: "Fira Code", Consolas, monospace;
-  font-size: 14px;
 }
 
-/* 🔤 Colores de sintaxis */
+/* ❗ IMPORTANTE: NO toques TODO el <code> global */
+code {
+  background-color: #f6f8fa;
+  color: #24292f;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* 🔤 Sintaxis (más balanceada) */
 .highlight .k { color: #ff7b72; }   /* keywords */
 .highlight .s { color: #a5d6ff; }   /* strings */
 .highlight .c { color: #8b949e; }   /* comentarios */
 .highlight .nf { color: #d2a8ff; }  /* funciones */
 
-/* 🧼 Evita fondo blanco raro */
+/* 🧱 Contenedor del bloque */
 .highlight {
-  background: transparent !important;
+  margin: 1.5rem 0;
+  border: 1px solid #30363d;
+  border-radius: 12px;
 }
