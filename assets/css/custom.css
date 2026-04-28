@@ -1,103 +1,41 @@
-%% Algoritmo para perceptrón, 2 entradas
-clear; % Limpiar variables
-clc;   % Limpiar la ventana de comandos
-close all; % Cerrar todas las figuras abiertas
+/* ========================================= */
+/* 🏛️ LOGO Y HEADER (NO MÁS ENCIMADO) */
+/* ========================================= */
+header.site-header, .site-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  padding: 2.5rem 1.5rem !important;
+  height: auto !important;
+}
 
-% --------------------------------------
-% Tabla de verdad (Ejemplo de entrenamiento)
-% --------------------------------------
-% Definimos las entradas x1 y x2 para la función lógica OR
-x1 = [0 1 0 1];  % Primer entrada de la función OR
-x2 = [0 0 1 1];  % Segunda entrada de la función OR
+.site-logo {
+  max-height: 80px !important;
+  margin-bottom: 1.5rem !important;
+  display: block !important;
+}
 
-% Salidas deseadas para la función OR
-% -1 representa el valor negativo y 1 el valor positivo
-t = [-1 1 1 1];  % Resultado esperado de la función OR
+/* ========================================= */
+/* 🧾 BLOQUES DE CÓDIGO (GRIS MUY CLARO) */
+/* ========================================= */
+.language-matlab, .highlight, pre, code, .highlighter-rouge .highlight {
+  background-color: #f0f0f0 !important; /* Gris extra claro y limpio */
+  background: #f0f0f0 !important; 
+  color: #24292f !important;
+  border-radius: 12px !important;
+}
 
-% --------------------------------------
-% Condiciones iniciales y parámetros de entrenamiento
-% --------------------------------------
-% Inicialización de los pesos del perceptrón (pesos aleatorios)
-w = [0.0679 0.0758 0.0743];  % Pesos iniciales [w0, w1, w2]
+/* ❌ ELIMINAR CUALQUIER RASTRO DE RESALTADO BLANCO */
+.highlight span, pre span, .highlighter-rouge span {
+  background-color: transparent !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
 
-% Coeficiente de velocidad de entrenamiento (tasa de aprendizaje)
-eps = 0.01;  % Este valor controla cuánto se ajustan los pesos en cada iteración
-
-% Inicialización de la variable de época (número de iteraciones)
-epoca = 0;  % Comenzamos con la primera época
-lim_ep = 20;  % Máximo número de épocas (iteraciones) que ejecutaremos
-
-% Para visualizar la frontera de decisión en el gráfico, necesitamos un rango de valores para x1
-x1v = [-1.5:0.01:1.5];  % Rango de valores para x1 en el gráfico
-
-% Crear la figura para visualizar los resultados
-figure(1);  
-hold on;  % Mantener la gráfica actual
-grid on;  % Activar la cuadrícula
-
-% Graficar los puntos de entrenamiento (entradas x1, x2)
-for p = 1:length(t)
-    plot(x1(p), x2(p), 'ob', 'LineWidth', 3);  % Graficamos los puntos de entrada
-end
-
-% --------------------------------------
-% Entrenamiento del perceptrón
-% --------------------------------------
-% Realizamos el entrenamiento por un número de épocas determinado
-for i = 1:lim_ep
-    flag = 0;  % Variable para verificar si el modelo ha convergido
-    vector_error = [];  % Almacenamos los errores para analizar más tarde
-    
-    % Iteramos sobre todos los puntos de la tabla de verdad
-    for j = 1:length(t)
-        % Construimos el vector de entradas X, agregando 1 para el sesgo (w0)
-        X = [1 x1(j) x2(j)];  % El vector X tiene tres componentes: [1, x1, x2]
-        
-        % Calculamos la salida del perceptrón (V) con el producto punto de los pesos y las entradas
-        V = w * X';  % Producto punto entre los pesos y las entradas
-        
-        % Función de activación: si la salida es positiva, la salida es 1, si es negativa, es -1
-        if V > 0
-            y = 1;  % Salida esperada positiva
-        elseif V == 0
-            y = 0;  % Si la salida es 0, asignamos la salida como 0
-        else 
-            y = -1;  % Salida esperada negativa
-        end
-        
-        % Calculamos el error: diferencia entre la salida deseada y la salida real
-        e = t(j) - y;  % Error entre la salida esperada (t) y la salida obtenida (y)
-        
-        % Actualizamos los pesos utilizando la fórmula de aprendizaje del perceptrón
-        % El peso se ajusta en función del error, el valor de entrada y la tasa de aprendizaje (eps)
-        w = w + eps * X * e;  % Actualización de los pesos
-        
-        % Guardamos el error para realizar un análisis posterior
-        vector_error = [vector_error e];
-    end
-    
-    % Calculamos la nueva frontera de decisión en función de los pesos actualizados
-    % Esta fórmula nos da la ecuación de la recta que separa las clases
-    x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));  % Ecuación de la recta: x2 = (-w1/w2) * x1 - (w0/w2)
-    
-    % Graficamos la frontera de decisión en el gráfico
-    plot(x1v, x2v, 'LineWidth', 1.5);  % Dibujamos la frontera de decisión
-    axis([-1 1 -1 1]);  % Definimos los límites de la gráfica
-    axis square;  % Hacer los ejes proporcionales
-    axis tight;  % Ajustar la gráfica para que se ajuste al contenido
-    
-    % Calculamos la norma del error para verificar si el modelo ha aprendido
-    if norm(vector_error) == 0
-        flag = 1;  % Si el error es 0, significa que hemos convergido
-        disp('Condición alcanzada');  % Mostrar mensaje en la consola
-        break;  % Terminar el entrenamiento si la convergencia es alcanzada
-    else
-        flag = 0;  % Si el error no es 0, seguimos entrenando
-    end
-    
-    % Incrementamos el número de la época
-    epoca = epoca + 1;
-    
-    % Pausar un momento para ver el progreso de la gráfica
-    pause(1);  % Pausar para mostrar la evolución de la frontera de decisión
-end
+/* 🎨 COLORES DE SINTAXIS PARA FONDO CLARO */
+.highlight .k { color: #d73a49 !important; } /* Keywords */
+.highlight .nf { color: #6f42c1 !important; } /* Functions */
+.highlight .s { color: #032f62 !important; } /* Strings */
+.highlight .c { color: #6a737d !important; } /* Comments */
