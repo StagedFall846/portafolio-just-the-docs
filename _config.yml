@@ -12,8 +12,8 @@ plugins:
 url: "https://StagedFall846.github.io"
 baseurl: "/portafolio-just-the-docs"
 
-# 🌙 MODO OSCURO
-color_scheme: dark
+# 🌙 MODO OSCURO 
+color_scheme: light
 syntax_highlighter: rouge
 
 # Just the Docs config
