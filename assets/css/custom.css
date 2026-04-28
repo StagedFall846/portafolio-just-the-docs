@@ -1,103 +1,50 @@
-/* ============================= */
-/* 🏛️ LOGO Y HEADER (FIX) */
-/* ============================= */
-
-/* Ajuste para que el logo no se encime */
-.site-header {
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white; /* O el color de tu fondo */
-  border-bottom: 1px solid #eee;
-  position: relative;
-  z-index: 10;
-}
-
-/* Si el logo es una imagen directa o está en un contenedor */
-.site-logo, .site-header img {
-  max-height: 60px; /* Ajusta según prefieras el tamaño */
-  width: auto;
-  margin-bottom: 0;
-  display: block;
-}
-
-/* Empujamos el contenido principal hacia abajo para que no choque */
-.main-content {
-  margin-top: 20px; /* Espacio extra debajo del header */
-  padding-top: 1.5rem;
-  line-height: 1.6;
-}
-
-/* Aseguramos que el título H1 tenga su propio espacio */
-.main-content h1 {
-  margin-top: 1rem; 
-  padding-top: 0.5rem;
-  clear: both; /* Evita que elementos flotantes se encimen */
-  font-weight: 700;
-  color: #333;
-}
-
-/* ============================= */
-/* 🌐 AJUSTES GENERALES */
-/* ============================= */
-
-.main-content h2,
-.main-content h3 {
-  margin-top: 2.5rem;
-  color: #444;
-}
-
-.main-content p {
-  margin-bottom: 1.2rem;
-}
-
-/* ============================= */
-/* 🧾 BLOQUES DE CÓDIGO */
-/* ============================= */
-
+/* ========================================= */
+/* 🧱 BLOQUE DE CÓDIGO (FONDO NEGRO) */
+/* ========================================= */
 div.highlighter-rouge pre,
 .highlight pre {
-  background-color: #d3d3d3; /* Negro tipo GitHub */
-/*  color: #e6edf3; */
-  border-radius: 12px;
-  padding: 1.25rem;
-  overflow-x: auto;
-  line-height: 1.5;
-  font-size: 0.95rem;
-  border: 1px solid #30363d;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #0d1117 !important; /* Negro tipo GitHub */
+    color: #c9d1d9 !important;           /* Texto base gris claro */
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #30363d;
 }
 
-/* Código inline (Resaltado suave) */
-code {
-  background-color: #f6f8fa;
-  color: #cf222e; /* Un tono rojizo sutil para resaltar */
-  padding: 0.2rem 0.4rem;
-  border-radius: 6px;
-  font-family: "SFMono-Regular", Consolas, monospace;
-  font-size: 0.85em;
+/* ========================================= */
+/* ✨ EFECTO DE RESALTADO BLANCO EN EL TEXTO */
+/* ========================================= */
+/* Esto obliga a CADA fragmento de texto a tener fondo blanco */
+.highlight span {
+    background-color: #ffffff !important; /* Fondo blanco para las letras */
+    color: #000000 !important;           /* Letras negras para que se lean sobre blanco */
+    padding: 1px 3px;                    /* Pequeño espacio alrededor de cada letra */
+    border-radius: 3px;                  /* Bordes suaves para el resaltado */
 }
 
-/* ============================= */
-/* 🎨 SINTAXIS (Estilo Dark) */
-/* ============================= */
-
-.highlight .k  { color: #ff7b72; } /* keywords */
-.highlight .s  { color: #a5d6ff; } /* strings */
-.highlight .c  { color: #8b949e; } /* comentarios */
-.highlight .nf { color: #d2a8ff; } /* funciones */
-.highlight .nb { color: #ffa657; } /* built-ins */
-
-/* ============================= */
-/* 🛠️ LISTAS Y OBJETIVOS */
-/* ============================= */
-
-/* Para que los puntos de "Objetivos de la práctica" se vean más limpios */
-.main-content ul {
-  margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
+/* Ajuste específico para que los espacios vacíos no se marquen */
+.highlight .w {
+    background-color: transparent !important;
 }
 
-.main-content li {
-  margin-bottom: 0.5rem;
+/* ========================================= */
+/* 🏛️ ARREGLO LOGO IBERO (NO ENCIMADO) */
+/* ========================================= */
+/* Usamos selectores fuertes para forzar el cambio */
+body .site-header {
+    display: flex !important;
+    flex-direction: column !important; /* Logo arriba, texto abajo */
+    align-items: flex-start !important;
+    padding: 2rem 1rem !important;     /* Más espacio superior */
+    height: auto !important;           /* Deja que crezca según el logo */
+}
+
+body .site-logo {
+    margin-bottom: 1rem !important;    /* Espacio debajo del logo */
+    max-width: 180px !important;       /* Tamaño controlado */
+}
+
+body .site-title {
+    position: relative !important;     /* Quita el encimado absoluto */
+    margin-top: 0 !important;
+    display: block !important;
 }
