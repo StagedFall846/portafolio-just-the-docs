@@ -81,7 +81,7 @@ for i = 1:lim_ep
     axis([-1 1 -1 1]);
     axis square;
     
-    % Verificación de convergencia (Norma del error = 0)
+   % Verificación de convergencia (Norma del error = 0)
     if norm(vector_error) == 0
         flag = 1;
         plot(x1v, x2v, 'r', 'LineWidth', 2); % Resaltar frontera final en rojo
@@ -91,7 +91,7 @@ for i = 1:lim_ep
     
     epoca = epoca + 1;
     pause(0.2); % Pausa breve para visualizar la animación
-end
+end % 
 
 if flag == 0
     disp('Se alcanzó el límite de épocas sin convergencia total.');
