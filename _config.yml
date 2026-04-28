@@ -38,3 +38,5 @@ exclude:
   - "Gemfile.lock"
   - "node_modules"
   - "vendor"
+
+color_scheme: dark
