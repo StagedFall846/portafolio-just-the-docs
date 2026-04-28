@@ -1,4 +1,4 @@
-# 🧠 Algoritmo del Perceptrón Simple (2 entradas)
+# Algoritmo del Perceptrón Simple (2 entradas)
 
 **Proyecto:** Clasificación de la función lógica OR  
 **Objetivo general:** Encontrar la frontera de decisión linealmente separable.
