@@ -1,11 +1,11 @@
-# Algoritmo del Perceptrón Simple (2 entradas)
+## Algoritmo del Perceptrón Simple (2 entradas)
 
 **Proyecto:** Clasificación de la función lógica OR  
 **Objetivo general:** Encontrar la frontera de decisión linealmente separable.
 
 ---
 
-## 🎯 Objetivos de la práctica
+## Objetivos de la práctica
 
 - Comprender el funcionamiento del perceptrón simple  
 - Aplicar aprendizaje supervisado a un problema lógico  
