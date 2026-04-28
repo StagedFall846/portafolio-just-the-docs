@@ -15,7 +15,7 @@
 
 ---
 
-## 📘 Descripción del ejercicio
+## Descripción del ejercicio
 
 En este ejercicio se implementa un perceptrón de dos entradas para aprender la función lógica **OR**.
 
