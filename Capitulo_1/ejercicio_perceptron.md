@@ -1,3 +1,36 @@
+EJERCICIO PERCEPTRON: ## Algoritmo del Perceptrón Simple (2 entradas)
+
+**Proyecto:** Clasificación de la función lógica OR  
+**Objetivo general:** Encontrar la frontera de decisión linealmente separable.
+
+---
+
+## Objetivos de la práctica
+
+- Comprender el funcionamiento del perceptrón simple  
+- Aplicar aprendizaje supervisado a un problema lógico  
+- Analizar el ajuste iterativo de los pesos  
+- Visualizar la frontera de decisión  
+- Verificar la convergencia del algoritmo  
+
+---
+
+## Descripción del ejercicio
+
+En este ejercicio se implementa un perceptrón de dos entradas para aprender la función lógica **OR**.
+
+El modelo recibe pares de entrada `(x1, x2)` y debe clasificarlos correctamente en dos clases:
+
+- **1** → Verdadero  
+- **-1** → Falso  
+
+La clave del ejercicio es que este problema es **linealmente separable**, por lo que el perceptrón puede encontrar una solución.
+
+---
+
+## Código
+
+```matlab
 %% ALGORITMO DEL PERCEPTRÓN SIMPLE (2 ENTRADAS)
 % Proyecto: Clasificación de la función lógica OR
 % Objetivo: Encontrar la frontera de decisión linealmente separable
@@ -12,10 +45,10 @@ x2 = [0 0 1 1];
 t = [-1 1 1 1]; % Salida deseada
 
 %% 2. Parámetros iniciales
-w = [0.0679 0.0758 0.0743]; % Pesos iniciales
-eps = 0.01; % Tasa de aprendizaje
-epoca = 0; % Inicialización de épocas
-lim_ep = 20; % Límite de épocas
+w = [0.0679 0.0758 0.0743];
+eps = 0.01;
+epoca = 0;
+lim_ep = 20;
 
 x1v = -1.5:0.01:1.5;
 
@@ -28,7 +61,6 @@ title('Entrenamiento del Perceptrón - OR');
 xlabel('x1');
 ylabel('x2');
 
-% Graficamos los puntos de entrada (x1, x2)
 for p = 1:length(t)
     if t(p) == 1
         plot(x1(p), x2(p), 'ob', 'LineWidth', 3, 'MarkerFaceColor', 'b');
@@ -40,14 +72,12 @@ end
 %% 4. Entrenamiento
 for i = 1:lim_ep
     
-    % Vector de errores
     vector_error = [];
     
     for j = 1:length(t)
-        X = [1 x1(j) x2(j)]; % Incluimos el sesgo
-        V = w * X'; % Producto punto entre pesos y entrada
+        X = [1 x1(j) x2(j)];
+        V = w * X';
         
-        % Determinamos la salida predicha
         if V > 0
             y = 1;
         elseif V == 0
@@ -56,26 +86,18 @@ for i = 1:lim_ep
             y = -1;
         end
         
-        % Cálculo del error
         e = t(j) - y;
-        
-        % Actualización de los pesos
         w = w + eps * X * e;
         
-        % Guardamos el error
         vector_error = [vector_error e];
     end
 
-    % Calculamos la nueva frontera de decisión
     x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));
     plot(x1v, x2v, 'Color', [0.5 0.5 0.5], 'LineWidth', 1);
 
-    % Ajuste de los límites de la gráfica
     axis([-1 1 -1 1]); 
     axis square;
-    axis tight;
 
-    % Verificación de convergencia
     if norm(vector_error) == 0
         plot(x1v, x2v, 'g', 'LineWidth', 2.5);
         fprintf('Condición alcanzada en la época: %d\n', epoca);
@@ -97,3 +119,4 @@ end
 
 fprintf('Pesos finales: %.4f %.4f %.4f\n', w(1), w(2), w(3));
 fprintf('-----------------------------\n');
+```
