@@ -28,7 +28,7 @@ La clave del ejercicio es que este problema es **linealmente separable**, por lo
 
 ---
 
-## 💻 Código
+## Código
 
 ```matlab
 %% ALGORITMO DEL PERCEPTRÓN SIMPLE (2 ENTRADAS)
