@@ -1,41 +1,66 @@
-/* ========================================= */
-/* 🏛️ LOGO Y HEADER (NO MÁS ENCIMADO) */
-/* ========================================= */
-header.site-header, .site-header {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  padding: 2.5rem 1.5rem !important;
-  height: auto !important;
-}
+%% Algoritmo para perceptrón, 2 entradas
+clear;
+clc;
+close all;
+% Tabla de verdad (Teacher-Ejemplo de entrenamiento
+% FUNCIÓN OR
+x1 = [0 1 0 1];
+x2 = [0 0 1 1];
+t = [-1 1 1 1];
 
-.site-logo {
-  max-height: 80px !important;
-  margin-bottom: 1.5rem !important;
-  display: block !important;
-}
+% Condiciones iniciales y parámetros de entrenamiento
+w = [0.0679 0.0758 0.0743];
+eps = 0.01; % Coeficiente de velocidad de entrenamiento
+epoca = 0; % Inicializo mis epocas
+lim_ep = 20; %Límite máximo de epocas
+x1v = [-1.5:0.01:1.5];
 
-/* ========================================= */
-/* 🧾 BLOQUES DE CÓDIGO (GRIS MUY CLARO) */
-/* ========================================= */
-.language-matlab, .highlight, pre, code, .highlighter-rouge .highlight {
-  background-color: #f0f0f0 !important; /* Gris extra claro y limpio */
-  background: #f0f0f0 !important; 
-  color: #24292f !important;
-  border-radius: 12px !important;
-}
+figure(1);
+hold on;
+grid on;
+for p = 1:length(t)
+    plot(x1(p),x2(p), 'ob', 'LineWidth', 3)
+end
 
-/* ❌ ELIMINAR CUALQUIER RASTRO DE RESALTADO BLANCO */
-.highlight span, pre span, .highlighter-rouge span {
-  background-color: transparent !important;
-  background: transparent !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* 🎨 COLORES DE SINTAXIS PARA FONDO CLARO */
-.highlight .k { color: #d73a49 !important; } /* Keywords */
-.highlight .nf { color: #6f42c1 !important; } /* Functions */
-.highlight .s { color: #032f62 !important; } /* Strings */
-.highlight .c { color: #6a737d !important; } /* Comments */
+%% Iteraciones
+for i=1:lim_ep
+    flag=0;
+    vector_error = [];
+    for j=1:length(t)
+        X = [1 x1(j) x2(j)];
+        V = w*X';
+        if V > 0
+            y = 1;
+        elseif V == 0
+            y = 0;
+        else 
+            y = -1;
+        end
+        
+        % Calculo el error
+        e = t(j) - y;
+        
+        % Defino proximos pesos
+        w = w + eps*X*e;
+        vector_error = [vector_error e];
+    end
+    
+    % Actualización de la frontera de decisión
+    x2v = (-w(2)/w(3))*x1v - (w(1)/w(3));
+    plot(x1v, x2v, 'LineWidth', 1.5);
+    axis([-1 1 -1 1]);
+    axis square;
+    axis tight;
+    
+    % Cálculo de norma del error
+    if norm(vector_error) == 0
+        flag = 1;
+        disp('Condición alcanzada');
+        break;
+    else
+        flag = 0;
+    end
+    
+    epoca = epoca + 1;
+    pause(1);
+end
