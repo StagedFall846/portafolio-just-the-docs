@@ -105,5 +105,6 @@ for i=1:lim_ep
 end
 ```
 
-{: .btn .btn-purple }
-[Descargar ejercicio_perceptron.m](ejercicio_perceptron.m)
+<a href="ejercicio_perceptron.m" class="btn btn-purple" style="text-decoration: none; display: inline-block;">
+   Descargar ejercicio_perceptron.m
+</a>
