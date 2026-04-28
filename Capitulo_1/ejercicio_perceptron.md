@@ -100,3 +100,4 @@ end
 
 fprintf('Pesos finales: w0=%.4f, w1=%.4f, w2=%.4f\n', w(1), w(2), w(3));
 fprintf('-----------------------------\n');
+```
