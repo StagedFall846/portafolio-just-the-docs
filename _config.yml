@@ -8,7 +8,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
 
-# URLs
+# URL (IMPORTANTE que coincida con tu repo)
 url: "https://StagedFall846.github.io"
 baseurl: "/portafolio-just-the-docs"
 
@@ -16,7 +16,7 @@ baseurl: "/portafolio-just-the-docs"
 color_scheme: dark
 syntax_highlighter: rouge
 
-# Just the Docs
+# Just the Docs config
 just_the_docs:
   custom_css:
     - "assets/css/custom.css"
@@ -31,9 +31,10 @@ aux_links:
   "Mi GitHub":
     - "https://github.com/StagedFall846"
 
-# URLs limpias
+# Permalinks
 permalink: pretty
 
+# Excluir archivos
 exclude:
   - "Gemfile"
   - "Gemfile.lock"
