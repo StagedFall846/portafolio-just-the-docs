@@ -57,8 +57,8 @@
 
 div.highlighter-rouge pre,
 .highlight pre {
-  background-color: #0d1117; /* Negro tipo GitHub */
-  color: #e6edf3;
+  background-color: #d3d3d3; /* Negro tipo GitHub */
+/*  color: #e6edf3; */
   border-radius: 12px;
   padding: 1.25rem;
   overflow-x: auto;
