@@ -104,3 +104,6 @@ for i=1:lim_ep
     pause(1);
 end
 ```
+
+{: .btn .btn-purple }
+[Descargar ejercicio_perceptron.m](ejercicio_perceptron.m)
