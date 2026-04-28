@@ -16,11 +16,11 @@ header.site-header, .site-header {
 }
 
 /* ========================================= */
-/* 🧾 BLOQUES DE CÓDIGO (GRIS MÁS CLARO) */
+/* 🧾 BLOQUES DE CÓDIGO (GRIS MUY CLARO) */
 /* ========================================= */
 .language-matlab, .highlight, pre, code, .highlighter-rouge .highlight {
-  background-color: #e1e1e1 !important; /* Gris más claro y limpio */
-  background: #e1e1e1 !important; 
+  background-color: #f0f0f0 !important; /* Gris extra claro y limpio */
+  background: #f0f0f0 !important; 
   color: #24292f !important;
   border-radius: 12px !important;
 }
