@@ -1,21 +1,22 @@
 title: "Portafolio de Ingeniería"
 description: "Mecatrónica y Control Inteligente | Estefania Cruz"
 
-# GitHub Pages: modo recomendado
+# GitHub Pages
 remote_theme: just-the-docs/just-the-docs
+
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
 
-# IMPORTANTES:
+# URLs
 url: "https://StagedFall846.github.io"
 baseurl: "/portafolio-just-the-docs"
 
-# Configuración de Estilo
-color_scheme: "light" # Mantiene el fondo blanco
+# 🌙 MODO OSCURO
+color_scheme: dark
 syntax_highlighter: rouge
 
-# Configuración Just the Docs
+# Just the Docs
 just_the_docs:
   custom_css:
     - "assets/css/custom.css"
@@ -25,12 +26,12 @@ search_enabled: true
 search:
   heading_level: 2
 
-# Enlace al repositorio original
+# Links
 aux_links:
   "Mi GitHub":
     - "https://github.com/StagedFall846"
 
-# Enlaces limpios
+# URLs limpias
 permalink: pretty
 
 exclude:
@@ -38,8 +39,3 @@ exclude:
   - "Gemfile.lock"
   - "node_modules"
   - "vendor"
-
-
-theme: just-the-docs
-
-color_scheme: dark
