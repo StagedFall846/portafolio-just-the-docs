@@ -14,7 +14,7 @@ x2 = [0 0 1 1];
 t = [-1 1 1 1]; % Salida deseada (-1 para falso, 1 para verdadero)
 
 %% 2. Condiciones Iniciales y Parámetros de Entrenamiento
-% Pesos sinápticos iniciales (w0, w1, w2)
+% Pesos sinápticos iniciales (w0=bias, w1=x1, w2=x2)
 w = [0.0679 0.0758 0.0743]; 
 
 % Hiperparámetros
@@ -54,7 +54,7 @@ for i = 1:lim_ep
         % Cálculo de la suma ponderada (Potencial de activación)
         V = w * X';
         
-        % Función de Activación (Signo)
+        % Función de Activación (Signo/Escalón)
         if V > 0
             y = 1;
         elseif V == 0
@@ -74,25 +74,32 @@ for i = 1:lim_ep
     end
     
     % Actualización de la frontera de decisión en la gráfica
-    % Ecuación de la recta: w0 + w1*x1 + w2*x2 = 0  => x2 = (-w1/w2)*x1 - (w0/w2)
+    % Ecuación: w0 + w1*x1 + w2*x2 = 0  => x2 = (-w1/w2)*x1 - (w0/w2)
     x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));
     
-    plot(x1v, x2v, 'Color', [0.5 0.5 0.5], 'LineWidth', 1); % Líneas de épocas anteriores
+    % Graficar la evolución de la línea
+    plot(x1v, x2v, 'Color', [0.5 0.5 0.5, 0.3], 'LineWidth', 1); 
     axis([-1 1 -1 1]);
     axis square;
     
-   % Verificación de convergencia (Norma del error = 0)
+    % Verificación de convergencia (Norma del error = 0)
     if norm(vector_error) == 0
         flag = 1;
-        plot(x1v, x2v, 'r', 'LineWidth', 2); % Resaltar frontera final en rojo
+        plot(x1v, x2v, 'g', 'LineWidth', 2.5); % Frontera final en verde
         fprintf('Condición alcanzada en la época: %d\n', epoca);
         break
     end
     
     epoca = epoca + 1;
-    pause(0.2); % Pausa breve para visualizar la animación
-end % 
+    pause(0.5); % Pausa para visualizar la animación
+end
 
+%% 5. Resultado Final
 if flag == 0
     disp('Se alcanzó el límite de épocas sin convergencia total.');
+else
+    disp('Entrenamiento completado exitosamente.');
 end
+
+% Mostrar pesos finales
+fprintf('Pesos finales: w0=%.4f, w1=%.4f, w2=%.4f\n', w(1), w(2), w(3));
