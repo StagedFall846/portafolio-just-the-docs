@@ -7,7 +7,7 @@
 
 ## 💻 Código
 
-```matlab
+``` matlab
 %% ALGORITMO DEL PERCEPTRÓN SIMPLE (2 ENTRADAS)
 % Proyecto: Clasificación de la función lógica OR
 % Objetivo: Encontrar la frontera de decisión linealmente separable
