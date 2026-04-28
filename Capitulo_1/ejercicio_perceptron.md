@@ -116,6 +116,7 @@ if norm(vector_error) ~= 0
 else
     disp('Entrenamiento exitoso.');
 end
-```
+
 fprintf('Pesos finales: %.4f %.4f %.4f\n', w(1), w(2), w(3));
 fprintf('-----------------------------\n');
+```
