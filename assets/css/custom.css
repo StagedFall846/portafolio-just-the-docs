@@ -7,14 +7,14 @@ clear; clc; close all;
 %% 1. Configuración del Set de Entrenamiento (Teacher)
 x1 = [0 1 0 1];
 x2 = [0 0 1 1];
-t = [-1 1 1 1]; % Salida deseada (-1: Falso, 1: Verdadero)
+t  = [-1 1 1 1]; % Salida deseada
 
 %% 2. Condiciones Iniciales y Parámetros
 w = [0.0679 0.0758 0.0743]; 
-eps = 0.01;      % Learning Rate
+eps = 0.01;      % Learning rate
 epoca = 0;       
 lim_ep = 20;     
-x1v = [-1.5:0.01:1.5];
+x1v = -1.5:0.01:1.5;
 
 %% 3. Inicialización de la Gráfica
 figure(1); hold on; grid on;
@@ -23,53 +23,61 @@ xlabel('Entrada x1'); ylabel('Entrada x2');
 
 for p = 1:length(t)
     if t(p) == 1
-        plot(x1(p), x2(p), 'ob', 'LineWidth', 3, 'MarkerFaceColor', 'b');
+        plot(x1(p), x2(p), 'ob', 'LineWidth', 2, 'MarkerFaceColor', 'b');
     else
-        plot(x1(p), x2(p), 'or', 'LineWidth', 3, 'MarkerFaceColor', 'r');
+        plot(x1(p), x2(p), 'or', 'LineWidth', 2, 'MarkerFaceColor', 'r');
     end
 end
 
 %% 4. Ciclo de Entrenamiento
 for i = 1:lim_ep
-    flag = 0;
+    
     vector_error = [];
     
     for j = 1:length(t)
+        
         X = [1 x1(j) x2(j)];
         V = w * X';
         
+        % Función de activación
         if V > 0
             y = 1;
-        elseif V == 0
-            y = 0;
-        else 
+        else
             y = -1;
         end
         
+        % Error
         e = t(j) - y;
+        
+        % Actualización de pesos
         w = w + eps * X * e;
+        
         vector_error = [vector_error e];
     end
     
+    % Frontera de decisión
     x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));
-    plot(x1v, x2v, 'Color', [0.5 0.5 0.5, 0.3], 'LineWidth', 1); 
-    axis([-1 1 -1 1]); axis square;
     
+    plot(x1v, x2v, 'Color', [0.5 0.5 0.5], 'LineWidth', 1);
+    axis([-1 1 -1 1]);
+    axis square;
+    
+    % Condición de paro
     if norm(vector_error) == 0
-        flag = 1;
         plot(x1v, x2v, 'g', 'LineWidth', 2.5);
         fprintf('Convergencia alcanzada en la época: %d\n', epoca);
         break
     end
     
     epoca = epoca + 1;
-    pause(0.2); 
-end 
+    pause(0.2);
+end
 
 %% 5. Reporte de Resultados
-if flag == 0
-    disp('Resultado: Entrenamiento incompleto.');
-else
+if norm(vector_error) == 0
     disp('Resultado: Entrenamiento exitoso.');
+else
+    disp('Resultado: Entrenamiento incompleto.');
 end
-fprintf('Pesos Finales: w0=%.4f, w1=%.4f, w2=%.4f\n', w(1), w(2), w(3));
+
+fprintf('Pesos finales: w0=%.4f, w1=%.4f, w2=%.4f\n', w(1), w(2), w(3));
