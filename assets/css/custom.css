@@ -1,83 +1,27 @@
-%% ALGORITMO DEL PERCEPTRÓN SIMPLE (2 ENTRADAS)
-% Proyecto: Clasificación de la función lógica OR
-% Objetivo: Encontrar la frontera de decisión linealmente separable.
+/* 🧾 BLOQUES DE CÓDIGO (FONDO NEGRO SOLO AQUÍ) */
+pre, pre.highlight, div.highlighter-rouge pre {
+  background-color: #0d1117 !important; /* negro tipo GitHub */
+  color: #c9d1d9 !important;
+  border-radius: 10px;
+  padding: 16px;
+  overflow-x: auto;
+}
 
-clear; clc; close all;
+/* 🎨 Código dentro del bloque */
+code {
+  background-color: transparent !important;
+  color: #c9d1d9 !important;
+  font-family: "Fira Code", Consolas, monospace;
+  font-size: 14px;
+}
 
-%% 1. Configuración del Set de Entrenamiento (Teacher)
-x1 = [0 1 0 1];
-x2 = [0 0 1 1];
-t  = [-1 1 1 1]; % Salida deseada
+/* 🔤 Colores de sintaxis */
+.highlight .k { color: #ff7b72; }   /* keywords */
+.highlight .s { color: #a5d6ff; }   /* strings */
+.highlight .c { color: #8b949e; }   /* comentarios */
+.highlight .nf { color: #d2a8ff; }  /* funciones */
 
-%% 2. Condiciones Iniciales y Parámetros
-w = [0.0679 0.0758 0.0743]; 
-eps = 0.01;      % Learning rate
-epoca = 0;       
-lim_ep = 20;     
-x1v = -1.5:0.01:1.5;
-
-%% 3. Inicialización de la Gráfica
-figure(1); hold on; grid on;
-title('Entrenamiento del Perceptrón - Función Lógica OR');
-xlabel('Entrada x1'); ylabel('Entrada x2');
-
-for p = 1:length(t)
-    if t(p) == 1
-        plot(x1(p), x2(p), 'ob', 'LineWidth', 2, 'MarkerFaceColor', 'b');
-    else
-        plot(x1(p), x2(p), 'or', 'LineWidth', 2, 'MarkerFaceColor', 'r');
-    end
-end
-
-%% 4. Ciclo de Entrenamiento
-for i = 1:lim_ep
-    
-    vector_error = [];
-    
-    for j = 1:length(t)
-        
-        X = [1 x1(j) x2(j)];
-        V = w * X';
-        
-        % Función de activación
-        if V > 0
-            y = 1;
-        else
-            y = -1;
-        end
-        
-        % Error
-        e = t(j) - y;
-        
-        % Actualización de pesos
-        w = w + eps * X * e;
-        
-        vector_error = [vector_error e];
-    end
-    
-    % Frontera de decisión
-    x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));
-    
-    plot(x1v, x2v, 'Color', [0.5 0.5 0.5], 'LineWidth', 1);
-    axis([-1 1 -1 1]);
-    axis square;
-    
-    % Condición de paro
-    if norm(vector_error) == 0
-        plot(x1v, x2v, 'g', 'LineWidth', 2.5);
-        fprintf('Convergencia alcanzada en la época: %d\n', epoca);
-        break
-    end
-    
-    epoca = epoca + 1;
-    pause(0.2);
-end
-
-%% 5. Reporte de Resultados
-if norm(vector_error) == 0
-    disp('Resultado: Entrenamiento exitoso.');
-else
-    disp('Resultado: Entrenamiento incompleto.');
-end
-
-fprintf('Pesos finales: w0=%.4f, w1=%.4f, w2=%.4f\n', w(1), w(2), w(3));
+/* 🧼 Evita fondo blanco raro */
+.highlight {
+  background: transparent !important;
+}
