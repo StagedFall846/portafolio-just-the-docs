@@ -5,13 +5,8 @@
 
 ---
 
-## Objetivos de la práctica
-
-- Comprender el funcionamiento del perceptrón simple  
-- Aplicar aprendizaje supervisado a un problema lógico  
-- Analizar el ajuste iterativo de los pesos  
-- Visualizar la frontera de decisión  
-- Verificar la convergencia del algoritmo  
+## Objetivo de la práctica
+- Implementar y entrenar un perceptrón para resolver la función lógica OR con dos entradas. El objetivo es ajustar los pesos del perceptrón mediante aprendizaje supervisado hasta que clasifique correctamente todas las combinaciones de entradas.
 
 ---
 
@@ -25,6 +20,19 @@ El modelo recibe pares de entrada `(x1, x2)` y debe clasificarlos correctamente 
 - **-1** → Falso  
 
 La clave del ejercicio es que este problema es **linealmente separable**, por lo que el perceptrón puede encontrar una solución.
+
+### Tabla de verdad de la función OR
+
+| x1  | x2  | Salida (t) |
+|-----|-----|------------|
+|  0  |  0  |     -1     |
+|  0  |  1  |     1      |
+|  1  |  0  |     1      |
+|  1  |  1  |     1      |
+
+### Proceso de entrenamiento
+
+El entrenamiento se repite durante varias **épocas** hasta que el perceptrón clasifica correctamente todas las combinaciones, ajustando la **línea de decisión** en cada iteración. El objetivo es observar cómo el modelo aprende a separar las clases y ajusta sus pesos para mejorar su desempeño.
 
 ---
 
