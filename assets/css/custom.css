@@ -16,14 +16,14 @@ header.site-header, .site-header {
 }
 
 /* ========================================= */
-/* 🧾 BLOQUES DE CÓDIGO (GRIS UN TONO MÁS ABAJO) */
+/* 🧾 BLOQUES DE CÓDIGO (GRIS CLARO) */
 /* ========================================= */
+/* Atacamos todas las clases posibles de Jekyll/Rouge */
 .language-matlab, .highlight, pre, code, .highlighter-rouge .highlight {
-  background-color: #bcbcbc !important; /* Gris un tono más oscuro que el anterior */
-  background: #bcbcbc !important; 
+  background-color: #d3d3d3 !important;
+  background: #d3d3d3 !important; /* Refuerzo */
   color: #24292f !important;
   border-radius: 12px !important;
-  border: 1px solid #a8a8a8 !important; /* Ajuste sutil al borde */
 }
 
 /* ❌ ELIMINAR CUALQUIER RASTRO DE RESALTADO BLANCO */
