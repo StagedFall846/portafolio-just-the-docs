@@ -1,81 +1,94 @@
-%% ALGORITMO DEL PERCEPTRÓN SIMPLE (2 ENTRADAS)
-% Proyecto: Clasificación de la función lógica OR
-% Objetivo: Encontrar la frontera de decisión linealmente separable.
+# 🧠 Ejercicio: Perceptrón
 
-clear; clc; close all;
+Este ejercicio implementa un **perceptrón de dos entradas**, uno de los modelos más básicos dentro del campo del aprendizaje supervisado y base de las redes neuronales artificiales.
 
-%% 1. Configuración del Set de Entrenamiento (Teacher)
+---
+
+## 🎯 Objetivos
+
+- Comprender el funcionamiento del algoritmo del perceptrón.
+- Implementar el entrenamiento con datos simples.
+- Analizar el ajuste de pesos en función del error.
+- Visualizar la frontera de decisión.
+- Aplicar el modelo a una función lógica (OR).
+
+---
+
+## 📊 Problema
+
+Se entrena el perceptrón para aprender la función lógica **OR**:
+
+| x1 | x2 | t  |
+|----|----|----|
+| 0  | 0  | -1 |
+| 1  | 0  |  1 |
+| 0  | 1  |  1 |
+| 1  | 1  |  1 |
+
+---
+
+## 💻 Código
+
+```matlab
+%% Algoritmo para perceptrón, 2 entradas
+clear;
+clc;
+close all;
+
+% Tabla de verdad (FUNCIÓN OR)
 x1 = [0 1 0 1];
 x2 = [0 0 1 1];
-t  = [-1 1 1 1]; % Salida deseada (-1: Falso, 1: Verdadero)
+t = [-1 1 1 1];
 
-%% 2. Condiciones Iniciales y Parámetros
-w      = [0.0679 0.0758 0.0743]; % Pesos iniciales [bias, w1, w2]
-eps    = 0.01;                   % Coeficiente de aprendizaje
-epoca  = 0;
+% Condiciones iniciales
+w = [0.0679 0.0758 0.0743];
+eps = 0.01;
+epoca = 0;
 lim_ep = 20;
-x1v    = [-1.5:0.01:1.5];        % Vector para graficar frontera
 
-%% 3. Inicialización de la Gráfica
-figure(1); hold on; grid on;
-title('Entrenamiento del Perceptrón - Función OR');
-xlabel('Entrada x1'); ylabel('Entrada x2');
+x1v = -1.5:0.01:1.5;
 
-% Dibujar puntos de entrenamiento
+figure(1);
+hold on;
+grid on;
+
 for p = 1:length(t)
-    if t(p) == 1
-        plot(x1(p), x2(p), 'ob', 'LineWidth', 3, 'MarkerFaceColor', 'b');
-    else
-        plot(x1(p), x2(p), 'or', 'LineWidth', 3, 'MarkerFaceColor', 'r');
-    end
+    plot(x1(p),x2(p), 'ob', 'LineWidth', 3)
 end
 
-%% 4. Ciclo de Entrenamiento (Iteraciones)
+%% Iteraciones
 for i = 1:lim_ep
-    flag = 0;
     vector_error = [];
     
     for j = 1:length(t)
-        X = [1 x1(j) x2(j)]; % Vector de entrada con bias (X0 = 1)
-        V = w * X';          % Potencial de activación
+        X = [1 x1(j) x2(j)];
+        V = w * X';
         
-        % Función de Activación (Signo)
         if V > 0
             y = 1;
         elseif V == 0
             y = 0;
-        else 
+        else
             y = -1;
         end
         
-        e = t(j) - y;        % Error
-        w = w + eps * X * e; % Actualización de pesos
+        e = t(j) - y;
+        w = w + eps * X * e;
         vector_error = [vector_error e];
     end
-    
-    % Cálculo de la frontera de decisión
-    x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));
-    plot(x1v, x2v, 'Color', [0.5 0.5 0.5, 0.3], 'LineWidth', 1); 
-    axis([-1 1 -1 1]); axis square;
-    
-    % Verificación de convergencia
+
+    x2v = (-w(2)/w(3))*x1v - (w(1)/w(3));
+    plot(x1v, x2v, 'LineWidth', 1.5);
+
+    axis([-1 1 -1 1]);
+    axis square;
+    axis tight;
+
     if norm(vector_error) == 0
-        flag = 1;
-        plot(x1v, x2v, 'g', 'LineWidth', 2.5); % Frontera final exitosa
-        fprintf('Condición alcanzada en la época: %d\n', epoca);
+        disp('Condición alcanzada')
         break
     end
-    
-    epoca = epoca + 1;
-    pause(0.1); 
-end 
 
-%% 5. Resultado Final
-fprintf('\n-------------------------------------------\n');
-if flag == 0
-    disp('Resultado: Límite de épocas alcanzado sin convergencia.');
-else
-    disp('Resultado: Entrenamiento completado exitosamente.');
+    epoca = epoca + 1;
+    pause(1);
 end
-fprintf('Pesos finales: w0=%.4f, w1=%.4f, w2=%.4f\n', w(1), w(2), w(3));
-fprintf('-------------------------------------------\n');
