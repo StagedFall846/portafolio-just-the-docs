@@ -1,8 +1,7 @@
 ## Generador de Entrenamiento: Cinemática Inversa 2GDL con Red Neuronal
 
-**Proyecto:** Resolución de Cinemática Inversa para un Robot de 2 Grados de Libertad usando Redes Neuronales
+**Proyecto:** Resolución de Cinemática Inversa para un Robot de 2 Grados de Libertad usando Redes Neuronales  
 **Objetivo general:** Entrenar una red neuronal para resolver la cinemática inversa de un robot 2GDL, prediciendo los ángulos articulares y evaluando su desempeño.
-
 
 ---
 
