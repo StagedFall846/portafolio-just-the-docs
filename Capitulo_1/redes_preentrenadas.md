@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Comparativa de Arquitecturas NNET en Simulink"
+title: "Generador de Entrenamiento: Cinemática Inversa 2GDL"
 parent: "Capítulo 1: Redes Neuronales"
-nav_order: 2
+nav_order: 3
 ---
 
 ## Comparativa de Arquitecturas NNET en Simulink
