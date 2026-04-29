@@ -1,17 +1,13 @@
 ## Algoritmo del Perceptrón Simple (2 entradas)
 
 **Proyecto:** Clasificación de la función lógica OR  
-**Objetivo general:** Encontrar la frontera de decisión linealmente separable.
+**Objetivo general:** Entrenar un **perceptrón** para clasificar correctamente la **función lógica OR** ajustando los pesos mediante aprendizaje supervisado.
+
 
 ---
 
-## Objetivos de la práctica
-
-- Comprender el funcionamiento del perceptrón simple  
-- Aplicar aprendizaje supervisado a un problema lógico  
-- Analizar el ajuste iterativo de los pesos  
-- Visualizar la frontera de decisión  
-- Verificar la convergencia del algoritmo  
+## Objetivo de la práctica
+- Implementar y entrenar un perceptrón para resolver la función lógica OR con dos entradas. El objetivo es ajustar los pesos del perceptrón mediante aprendizaje supervisado hasta que clasifique correctamente todas las combinaciones de entradas.
 
 ---
 
@@ -26,58 +22,57 @@ El modelo recibe pares de entrada `(x1, x2)` y debe clasificarlos correctamente 
 
 La clave del ejercicio es que este problema es **linealmente separable**, por lo que el perceptrón puede encontrar una solución.
 
+### Tabla de verdad de la función OR
+
+| x1  | x2  | Salida (t) |
+|-----|-----|------------|
+|  0  |  0  |     -1     |
+|  0  |  1  |     1      |
+|  1  |  0  |     1      |
+|  1  |  1  |     1      |
+
+### Proceso de entrenamiento
+
+El entrenamiento se repite durante varias **épocas** hasta que el perceptrón clasifica correctamente todas las combinaciones, ajustando la **línea de decisión** en cada iteración. El objetivo es observar cómo el modelo aprende a separar las clases y ajusta sus pesos para mejorar su desempeño.
+
 ---
 
 ## Código
 
 ```matlab
-%% ALGORITMO DEL PERCEPTRÓN SIMPLE (2 ENTRADAS)
-% Proyecto: Clasificación de la función lógica OR
-% Objetivo: Encontrar la frontera de decisión linealmente separable
-
-clear; 
-clc; 
+%% Algoritmo para perceptrón, 2 entradas
+clear;
+clc;
 close all;
 
-%% 1. Configuración del Set de Entrenamiento
+% Tabla de verdad (Teacher-Ejemplo de entrenamiento
+% FUNCIÓN OR
 x1 = [0 1 0 1];
 x2 = [0 0 1 1];
-t = [-1 1 1 1]; % Salida deseada
+t = [-1 1 1 1];
 
-%% 2. Parámetros iniciales
+% Condiciones iniciales y parámetros de entrenamiento
 w = [0.0679 0.0758 0.0743];
-eps = 0.01;
-epoca = 0;
-lim_ep = 20;
+eps = 0.01; % Coeficiente de velocidad de entrenamiento
+epoca = 0; % Inicializo mis epocas
+lim_ep = 20; %Límite máximo de epocas
 
-x1v = -1.5:0.01:1.5;
-
-%% 3. Gráfica inicial
+x1v = [-1.5:0.01:1.5];
 figure(1);
 hold on;
 grid on;
-
-title('Entrenamiento del Perceptrón - OR');
-xlabel('x1');
-ylabel('x2');
-
 for p = 1:length(t)
-    if t(p) == 1
-        plot(x1(p), x2(p), 'ob', 'LineWidth', 3, 'MarkerFaceColor', 'b');
-    else
-        plot(x1(p), x2(p), 'or', 'LineWidth', 3, 'MarkerFaceColor', 'r');
-    end
+    plot(x1(p),x2(p), 'ob', 'LineWidth', 3)
 end
 
-%% 4. Entrenamiento
-for i = 1:lim_ep
-    
+%% Iteraciones
+for i=1:lim_ep
+    flag=0;
     vector_error = [];
-    
-    for j = 1:length(t)
+    for j=1:length(t)
         X = [1 x1(j) x2(j)];
-        V = w * X';
-        
+        V = w*X'
+
         if V > 0
             y = 1;
         elseif V == 0
@@ -85,38 +80,31 @@ for i = 1:lim_ep
         else 
             y = -1;
         end
-        
-        e = t(j) - y;
-        w = w + eps * X * e;
-        
+        y
+        % Calculo el error
+        e = t(j)-y
+        % Defino proximos pesos
+        w = w + eps*X*e
         vector_error = [vector_error e];
     end
-
-    x2v = (-w(2)/w(3)) * x1v - (w(1)/w(3));
-    plot(x1v, x2v, 'Color', [0.5 0.5 0.5], 'LineWidth', 1);
-
-    axis([-1 1 -1 1]); 
+    x2v = (-w(2)/w(3))*x1v-(w(1)/w(3))
+    plot(x1v, x2v, LineWidth=1.5)
+    axis([-1 1 -1 1]);
     axis square;
-
+    axis tight;
+    % Cálculo de norma del error
     if norm(vector_error) == 0
-        plot(x1v, x2v, 'g', 'LineWidth', 2.5);
-        fprintf('Condición alcanzada en la época: %d\n', epoca);
+        flag = 1;
+        disp('Condición alcanzada')
         break
+    else
+        flag = 0;
     end
-
-    epoca = epoca + 1;
-    pause(0.1);
+    epoca = epoca + 1
+    pause(1);
 end
-
-%% 5. Resultado
-fprintf('\n-----------------------------\n');
-
-if norm(vector_error) ~= 0
-    disp('No convergió.');
-else
-    disp('Entrenamiento exitoso.');
-end
-
-fprintf('Pesos finales: %.4f %.4f %.4f\n', w(1), w(2), w(3));
-fprintf('-----------------------------\n');
 ```
+
+<a href="ejercicio_perceptron.m" class="btn" style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;">
+   Descargar ejercicio_perceptron.m
+</a>
