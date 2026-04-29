@@ -1,8 +1,14 @@
+---
+layout: default
+title: "Algoritmo del Perceptrón Simple"
+parent: "Capítulo 1: Redes Neuronales"
+nav_order: 1
+---
+
 ## Algoritmo del Perceptrón Simple (2 entradas)
 
 **Proyecto:** Clasificación de la función lógica OR  
 **Objetivo general:** Entrenar un **perceptrón** para clasificar correctamente la **función lógica OR** ajustando los pesos mediante aprendizaje supervisado.
-
 
 ---
 
