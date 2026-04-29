@@ -3,6 +3,7 @@ layout: default
 title: Inicio
 nav_order: 1
 description: "Recursos y ejercicios prácticos para el laboratorio de Control Inteligente."
+nav_order: 1
 ---
 
 # Laboratorio de Control Inteligente e IA
