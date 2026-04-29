@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Comparativa de Arquitecturas NNET en Simulink"
+parent: "Capítulo 1: Redes Neuronales"
+nav_order: 2
+---
+
 ## Comparativa de Arquitecturas NNET en Simulink
 
 **Proyecto:** Aproximación de una Función No Lineal para Cinemática Inversa utilizando Redes Neuronales
