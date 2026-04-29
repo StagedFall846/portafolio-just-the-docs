@@ -33,6 +33,25 @@ Se utilizan tres configuraciones de redes neuronales:
 ---
 
 ## Imagenes 
+<p align="center">
+  <img src="{{ site.baseurl }}/Capitulo_1/redes_preentrenadas1.png" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+  <br><i>Diagrama general del sistema en Simulink</i>
+</p>
+
+<p align="center">
+  <img src="{{ site.baseurl }}/Capitulo_1/Function Fitting Neural Network.png" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+  <br><i>Arquitectura de la Red de Ajuste de Funciones (2 capas)</i>
+</p>
+
+<p align="center">
+  <img src="{{ site.baseurl }}/Capitulo_1/Feed-Forward Neural Network.png" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+  <br><i>Arquitectura de la Red Feed-Forward (3 capas)</i>
+</p>
+
+<p align="center">
+  <img src="{{ site.baseurl }}/Capitulo_1/Custom Neural Network.png" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+  <br><i>Arquitectura de la Red Neuronal Personalizada</i>
+</p>
 
 
 
