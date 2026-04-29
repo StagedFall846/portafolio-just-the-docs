@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Generador de Entrenamiento: Cinemática Inversa 2GDL"
+parent: "Capítulo 1: Redes Neuronales"
+nav_order: 3
+---
+
 ## Generador de Entrenamiento: Cinemática Inversa 2GDL con Red Neuronal
 
 **Proyecto:** Resolución de Cinemática Inversa para un Robot de 2 Grados de Libertad usando Redes Neuronales  
