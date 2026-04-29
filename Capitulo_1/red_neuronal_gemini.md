@@ -132,3 +132,5 @@ legend('Eslabones del Robot', 'Punto Objetivo');
 % Genera un diagrama de bloques listo para conectarse a una planta en Simulink
 gensim(net);
 ```
+
+
