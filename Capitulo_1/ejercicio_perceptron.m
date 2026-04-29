@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Algoritmo del Perceptrón Simple"
+parent: "Capítulo 1: Redes Neuronales"
+nav_order: 1
+---
+
+
 %% Algoritmo para perceptrón, 2 entradas
 clear;
 clc;
