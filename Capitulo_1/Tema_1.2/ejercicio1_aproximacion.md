@@ -9,42 +9,64 @@ nav_order: 1
 
 ## 1.2: Aproximación por Rectas Secantes (MATLAB)
 
-### Proyecto
-**Aproximación de una Función No Lineal mediante Segmentos Lineales (Rectas Secantes)**
-
-### Objetivo general
-Implementar un algoritmo en MATLAB que aproxime una función no lineal:
-
-\[
-y = -2x - x^2
-\]
-
-utilizando múltiples rectas secantes en intervalos definidos, evaluando la precisión de la aproximación y su representación gráfica.
-
-
-
+**Proyecto:** Aproximación de una Función No Lineal mediante Segmentos Lineales (Rectas Secantes)
+**Objetivo general:** Aproximar una función no lineal utilizando múltiples rectas secantes en intervalos definidos, evaluando la precisión de la aproximación y su representación gráfica en MATLAB.
 
 ---
 
-## Objetivo general
-Aproximar una función no lineal utilizando múltiples rectas secantes en intervalos definidos, evaluando la precisión de la aproximación y su representación gráfica en MATLAB.
-
----
-
-## Objetivo de la práctica
-
+## Objetivos de la práctica
 - Implementar una aproximación por tramos de una función no lineal usando rectas.
 - Calcular la ecuación de cada recta secante en distintos intervalos del dominio.
 - Visualizar la comparación entre la función original y su aproximación lineal.
 - Analizar cómo el tamaño y solapamiento de los intervalos afecta la precisión.
 
+
 ---
 
 ## Descripción del ejercicio
 
-Este ejercicio consiste en aproximar la función no lineal:
+En este ejercicio se implementa una técnica de **control convencional** para aproximar la función no lineal:
 
-```math
+\[
+y = -2x - x^2
+\]
+
+mediante el uso de **rectas secantes** calculadas por tramos.
+
+El modelo divide el dominio de la función original en **5 intervalos específicos** (algunos con solapamiento) para calcular la ecuación de la recta \($y = mx + b$\) que mejor represente cada segmento:
+
+- **Aproximación Lineal** → Cada tramo se trata como un modelo matemático exacto.  
+- **Cálculo de Pendientes** → Se determinan los valores de \(m\) y \(b\) basándose en los puntos extremos de cada rango.  
+
+La clave del ejercicio es observar cómo, al fragmentar una curva compleja en segmentos lineales más simples, es posible emular su comportamiento sin necesidad de recurrir inicialmente a un modelo de control inteligente.
+
+---
+
+### Rangos y Funciones de Aproximación
+
+| Función | Intervalo \([$x_1, x_2$]\) | Color Asignado |
+| :--- | :--- | :--- |
+| \(f_1\) | \(-10\) a \(-6\) | Verde |
+| \(f_2\) | \(-8\) a \(0\) | Azul |
+| \(f_3\) | \(-4\) a \(2\) | Rojo |
+| \(f_4\) | \(-2\) a \(6\) | Gris |
+| \(f_5\) | \(4\) a \(8\) | Negro |
+
+---
+
+### Proceso de Cálculo y Visualización
+
+El algoritmo en MATLAB procesa cada rango definido en la matriz de datos para obtener los puntos exactos sobre la parábola. Posteriormente, genera la visualización comparativa entre:
+
+- La **función original** (representada en gris de fondo)  
+- Las **5 rectas secantes** resultantes  
+
+Esto permite analizar visualmente el **error de aproximación**, especialmente en las zonas donde los intervalos se solapan.
+
+---
+
+## Código
+```matlab
 % ========================================================================
 % Programa: Aproximación por 5 Rectas (Rangos Solapados)
 % Función base: y = -2x - x^2
@@ -119,8 +141,6 @@ title('Aproximación por 5 Funciones (Secantes)');
 xlabel('x'); ylabel('y');
 legend('Location', 'South');
 axis([-11 9 -90 10]); % Ajustar zoom
-
 ```
-<a href="ejercicio1_aproximacion.m" class="btn" style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;">
-   Descargar ejercicio1_aproximacion.m
-</a>
+
+```matlab
