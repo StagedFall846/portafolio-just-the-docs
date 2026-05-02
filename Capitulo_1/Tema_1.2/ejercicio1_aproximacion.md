@@ -6,19 +6,32 @@ grand_parent: "Capítulo 1: Redes Neuronales"
 nav_order: 1
 ---
 
-Aproximación por Rectas Secantes en MATLAB
 
-## Proyecto
+## 1.2: Aproximación por Rectas Secantes (MATLAB)
+
+### Proyecto
 **Aproximación de una Función No Lineal mediante Segmentos Lineales (Rectas Secantes)**
+
+### Objetivo general
+Implementar un algoritmo en MATLAB que aproxime una función no lineal:
+
+\[
+y = -2x - x^2
+\]
+
+utilizando múltiples rectas secantes en intervalos definidos, evaluando la precisión de la aproximación y su representación gráfica.
+
+
+
 
 ---
 
-## 🎯 Objetivo general
+## Objetivo general
 Aproximar una función no lineal utilizando múltiples rectas secantes en intervalos definidos, evaluando la precisión de la aproximación y su representación gráfica en MATLAB.
 
 ---
 
-## 📌 Objetivo de la práctica
+## Objetivo de la práctica
 
 - Implementar una aproximación por tramos de una función no lineal usando rectas.
 - Calcular la ecuación de cada recta secante en distintos intervalos del dominio.
@@ -27,7 +40,7 @@ Aproximar una función no lineal utilizando múltiples rectas secantes en interv
 
 ---
 
-## 🧠 Descripción del ejercicio
+## Descripción del ejercicio
 
 Este ejercicio consiste en aproximar la función no lineal:
 
