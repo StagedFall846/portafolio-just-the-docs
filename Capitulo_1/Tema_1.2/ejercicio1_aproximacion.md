@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Aproximación por Rectas Secantes"
-parent: "1.2 Control Convencional e Inteligente"
+parent: "Control Convencional e Inteligente"
 grand_parent: "Capítulo 1: Redes Neuronales"
 nav_order: 1
 ---
