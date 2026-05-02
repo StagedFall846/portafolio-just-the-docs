@@ -7,7 +7,7 @@ nav_order: 1
 ---
 
 
-## 1.2: Aproximación por Rectas Secantes (MATLAB)
+## Aproximación por Rectas Secantes (MATLAB)
 
 **Proyecto:** Aproximación de una Función No Lineal mediante Segmentos Lineales (Rectas Secantes)
 **Objetivo general:** Aproximar una función no lineal utilizando múltiples rectas secantes en intervalos definidos, evaluando la precisión de la aproximación y su representación gráfica en MATLAB.
