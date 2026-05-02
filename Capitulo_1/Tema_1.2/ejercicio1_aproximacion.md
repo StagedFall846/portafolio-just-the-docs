@@ -33,7 +33,7 @@ y = -2x - x^2
 
 mediante el uso de **rectas secantes** calculadas por tramos.
 
-El modelo divide el dominio de la función original en **5 intervalos específicos** (algunos con solapamiento) para calcular la ecuación de la recta \($y = mx + b$\) que mejor represente cada segmento:
+El modelo divide el dominio de la función original en **5 intervalos específicos** (algunos con solapamiento) para calcular la ecuación de la recta (y = mx + b) que mejor represente cada segmento:
 
 - **Aproximación Lineal** → Cada tramo se trata como un modelo matemático exacto.  
 - **Cálculo de Pendientes** → Se determinan los valores de \(m\) y \(b\) basándose en los puntos extremos de cada rango.  
