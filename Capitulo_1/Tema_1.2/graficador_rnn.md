@@ -9,7 +9,8 @@ nav_order: 2
 
 ## Simulación de Red Estática y Análisis de Desempeño
 
-**Proyecto:** Evaluación de Redes Neuronales Estáticas en Sistemas Dinámicos.
+**Proyecto:** Evaluación de Redes Neuronales Estáticas en Sistemas Dinámicos
+
 **Objetivo general:** Evaluar el rendimiento de una red neuronal estática entrenada para predecir el comportamiento dinámico de un sistema, analizando su precisión mediante herramientas de regresión y simulación directa en MATLAB.
 
 ---
