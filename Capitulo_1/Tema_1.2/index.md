@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "---- 1.2 Control Convencional e Inteligente ----"
+title: "1.2 Control Convencional e Inteligente"
 parent: "Capítulo 1: Redes Neuronales"
 has_children: true
 nav_order: 4
