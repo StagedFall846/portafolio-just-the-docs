@@ -44,7 +44,7 @@ La clave del ejercicio es observar cómo, al fragmentar una curva compleja en se
 
 ### Rangos y Funciones de Aproximación
 
-| Función | Intervalo \([$x_1, x_2$]\) | Color Asignado |
+| Función | Intervalo \([x1, x2]) | Color Asignado |
 | :--- | :--- | :--- |
 | \(f_1\) | \(-10\) a \(-6\) | Verde |
 | \(f_2\) | \(-8\) a \(0\) | Azul |
