@@ -143,4 +143,6 @@ legend('Location', 'South');
 axis([-11 9 -90 10]); % Ajustar zoom
 ```
 
-```matlab
+<a href="ejercicio1_aproximacion.m" class="btn" style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;">
+   Descargar ejercicio1_aproximacion.m
+</a>
