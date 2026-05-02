@@ -9,7 +9,7 @@ nav_order: 2
 
 ## Simulación de Red Estática y Análisis de Desempeño
 
-**Proyecto:** Evaluación de Redes Neuronales Estáticas en Sistemas Dinámicos
+**Proyecto:** Evaluación de Redes Neuronales Estáticas en Sistemas Dinámicos.
 **Objetivo general:** Evaluar el rendimiento de una red neuronal estática entrenada para predecir el comportamiento dinámico de un sistema, analizando su precisión mediante herramientas de regresión y simulación directa en MATLAB.
 
 ---
@@ -38,80 +38,31 @@ El objetivo es verificar qué tan bien la red logra aproximar el comportamiento 
 
 ## Código
 ```matlab
-% ========================================================================
-% Programa: Aproximación por 5 Rectas (Rangos Solapados)
-% Función base: y = -2x - x^2
-% ========================================================================
+% 1. Gráficas de desempeño estadístico
+figure('Name', 'Rendimiento de Entrenamiento');
+plotperform(info_entrenamiento); 
 
-clear; clc; close all;
+figure('Name', 'Regresión (Predicción vs Real)');
+% Reemplazamos las variables anteriores por u y x
+plotregression(x, red_estatica(u)); 
 
-% Definimos los datos exactos de la tabla en la imagen
-% Estructura: [x_inicial, x_final, R (Red), G (Green), B (Blue)]
-data = [
-    -10, -6,  0,   0.8, 0;    % f1: Verde
-     -8,  0,  0,   0.4, 1;    % f2: Azul
-     -4,  2,  0.8, 0.2, 0.2;  % f3: Rojo
-     -2,  6,  0.5, 0.5, 0.5;  % f4: Gris
-      4,  8,  0,   0,   0     % f5: Negro
-];
+% 2. Prueba de simulación (Evaluación directa, sin bucle recursivo)
+pasos_simulacion = 1000; 
 
-num_funciones = size(data, 1);
+% La red calcula todos los estados simulados evaluando directamente el vector de torque
+x_simulado = red_estatica(u(1:pasos_simulacion));
 
-fprintf('==========================================================\n');
-fprintf(' CÁLCULO DE LAS 5 RECTAS (y = mx + b)\n');
-fprintf('==========================================================\n');
+% Graficar la comparación de la variable q0 (primer eslabón)
+figure('Name', 'Prueba Dinámica: Posición q0');
+plot(1:pasos_simulacion, x(1, 1:pasos_simulacion), 'b', 'LineWidth', 1.5); hold on;
+plot(1:pasos_simulacion, x_simulado(1, :), 'r--', 'LineWidth', 1.5);
+legend('Dinámica Real', 'Predicción de Red Estática');
+title('Comparación de q_0 en el tiempo');
+xlabel('Muestras'); ylabel('Posición');
 
-% Preparamos la figura
-figure('Color', 'w');
-hold on; grid on;
-
-% 1. Graficar la función original (Parábola) de fondo
-x_fino = linspace(-12, 12, 500);
-y_real = -2*x_fino - x_fino.^2;
-plot(x_fino, y_real, 'Color', [0.8 0.8 0.8], 'LineWidth', 3, 'DisplayName', 'Original: -2x - x^2');
-
-% 2. Bucle para calcular y graficar cada una de las 5 funciones
-for i = 1:num_funciones
-    x1 = data(i, 1);
-    x2 = data(i, 2);
-    color_linea = data(i, 3:5);
-    
-    % Calcular y1 y y2 usando la función original
-    y1 = -2*x1 - x1^2;
-    y2 = -2*x2 - x2^2;
-    
-    % Calcular pendiente (m) y ordenada (b)
-    m = (y2 - y1) / (x2 - x1);
-    b = y1 - (m * x1);
-    
-    % Mostrar la ecuación en consola
-    fprintf('f%d -> Rango [%2d, %2d] | Puntos: (%d, %d) a (%d, %d)\n', ...
-            i, x1, x2, x1, y1, x2, y2);
-    
-    % Formato condicional para el signo de b
-    if b >= 0
-        fprintf('      Ecuación: y = %.2fx + %.2f\n', m, b);
-    else
-        fprintf('      Ecuación: y = %.2fx - %.2f\n', m, abs(b));
-    end
-    fprintf('----------------------------------------------------------\n');
-    
-    % Graficar el segmento de recta
-    x_seg = [x1, x2];
-    y_seg = [y1, y2];
-    plot(x_seg, y_seg, 'o-', 'LineWidth', 2, 'Color', color_linea, ...
-        'MarkerFaceColor', color_linea, 'DisplayName', sprintf('f%d', i));
-    
-    % Extender visualmente la recta (punteada) para ver la tangente/secante
-    % x_ext = linspace(x1-1, x2+1, 10);
-    % plot(x_ext, m*x_ext + b, '--', 'Color', color_linea, 'LineWidth', 1);
-end
-
-% Decoración del gráfico
-title('Aproximación por 5 Funciones (Secantes)');
-xlabel('x'); ylabel('y');
-legend('Location', 'South');
-axis([-11 9 -90 10]); % Ajustar zoom
+% 3. Exportación a Simulink y visualización
+gensim(red_estatica, -1);
+view(red_estatica)
 ```
 
 <a href="graficador_rnn.m" class="btn" style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;">
