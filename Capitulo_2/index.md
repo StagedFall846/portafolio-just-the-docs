@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Capítulo 2: Sistemas Difusos"
-nav_order: 3
+nav_order: 2
 has_children: true
 ---
 
