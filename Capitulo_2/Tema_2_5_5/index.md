@@ -2,6 +2,7 @@
 layout: default
 title: "2.5.2 Controladores Difusos Adaptativos"
 parent: "Capítulo 2: Lógica Difusa"
+has_children: true
 nav_order: 5
 ---
 
