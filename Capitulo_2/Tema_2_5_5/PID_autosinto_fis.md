@@ -49,7 +49,7 @@ Y genera como salida el ajuste dinámico del controlador PID.
 
 ---
 
-### 📌 Variables del sistema
+### Variables del sistema
 
 #### Entradas:
 - Referencia \(r\): `[0, 20]`
@@ -61,7 +61,7 @@ Y genera como salida el ajuste dinámico del controlador PID.
 
 ---
 
-### 🔁 Lógica de control difusa
+### Lógica de control difusa
 
 El sistema ajusta las ganancias según las siguientes reglas generales:
 
@@ -72,7 +72,7 @@ El sistema ajusta las ganancias según las siguientes reglas generales:
 
 ---
 
-### 📊 Comportamiento esperado
+### Comportamiento esperado
 
 El sistema difuso permite adaptar el PID en tiempo real:
 
@@ -83,7 +83,7 @@ El sistema difuso permite adaptar el PID en tiempo real:
 
 ---
 
-## ⚠️ Consideraciones importantes
+## Consideraciones importantes
 
 ### Windup integral
 
@@ -100,6 +100,6 @@ Un mal diseño de funciones de membresía puede generar cambios abruptos en las 
 
 ---
 
-### 🔴 Estabilidad del sistema
+### Estabilidad del sistema
 
 Valores altos de \(K_p, K_i, K_d\) pueden provocar inestabilidad en sistemas subamortiguados.
