@@ -9,7 +9,7 @@ nav_order: 1
 
 # Documentación Técnica: Control Difuso de Acción Derivativa (`PID_Derivado.fis`)
 
-## 1. Objetivos del Ejercicio
+## Objetivos del Ejercicio
 
 - **Diseñar un Sistema de Inferencia Difuso (FIS)** tipo Mamdani optimizado para calcular dinámicamente la variación de la acción derivativa ($d\_u$) de un lazo de control.
 - **Mitigar el sobretiro dinámico (*overshoot*)** en plantas propensas a oscilaciones bruscas ante cambios tipo escalón.
@@ -17,7 +17,7 @@ nav_order: 1
 
 ---
 
-## 2. Descripción General y Enfoque
+## Descripción General y Enfoque
 
 La acción derivativa clásica en un PID ($K_d \cdot \frac{de(t)}{dt}$) permite "mirar al futuro" y frenar el sistema si se aproxima demasiado rápido a la referencia. Sin embargo, un término derivativo estático es muy sensible al ruido y puede desgastar los actuadores.
 
@@ -27,32 +27,7 @@ El sistema analiza no solo la dirección del error, sino también **la aceleraci
 
 ---
 
-## 3. Metodología y Pasos a Seguir
-
-### Paso A: Configuración del Espacio de Entradas (Inputs)
-
-Las tres entradas comparten un universo de discurso idéntico `[-10 10]`:
-
-1. **Error ($e$):** 3 funciones de membresía (Negativo, Zero, Positivo).  
-2. **Derivada del Error ($d\_error$):** 3 funciones de membresía (Negativo, Zero, Positivo).  
-3. **Segunda Derivada del Error ($dd\_error$):** 3 funciones de membresía (Negativo, Zero, Positivo).  
-
-> **Nota:** Se usan funciones trapezoidales/triangulares lineales: Z-shape (Negativo), Triangular (Zero), S-shape (Positivo), distribuidas simétricamente.
-
-### Paso B: Configuración del Espacio de Salidas (Outputs)
-
-- **Acción Derivativa ($d\_u$):** Rango `[-10 10]` con 3 funciones Gaussianas (Negativo, Zero, Positivo).  
-- Las Gaussianas garantizan transiciones suaves y evitan discontinuidades.
-
-### Paso C: Lógica de Reglas Reducida (3 Reglas)
-
-Aunque con 3 entradas y 3 funciones cada una habría 27 combinaciones, se utilizan **solo 3 reglas críticas**, concentrando el control en los escenarios transitorios más importantes.
-
-- **Amortiguamiento preventivo:** Si el error es positivo pero disminuye rápidamente, se aplica acción derivativa opuesta para evitar sobretiro.
-
----
-
-## 4. Análisis y Consideraciones (Errores Comunes)
+## Análisis y Consideraciones (Errores Comunes)
 
 ### 1. Amplificación de Ruido por Doble Derivación
 
@@ -64,13 +39,13 @@ La segunda derivada ($dd\_error$) amplifica cualquier perturbación.
 Señal de Error ──>[Derivada]──>[Filtro Pasa-Bajos]──> d_error
 ```
 
-### 2. Saturación de Salida
+### Saturación de Salida
 
 Con el rango `[-10 10]`, si la escala en Simulink no está calibrada, $d\_u$ puede quedarse en +10/-10, actuando como un control On-Off en lugar de suave.
 
 ---
 
-## 5. Resultados Esperados
+## Resultados Esperados
 
 Al implementar este controlador en `PID_para_RNN.slx`:
 
@@ -88,5 +63,3 @@ Al implementar este controlador en `PID_para_RNN.slx`:
 Con $dd\_error$, el controlador puede **predecir** y ajustar la acción derivativa antes de que ocurra un sobretiro o choque contra la referencia.
 
 ---
-
-¿Quieres que redactemos las **3 reglas exactas de este `.fis`** o que hagamos la **sección de código MATLAB para cargar este archivo** y simularlo?  
