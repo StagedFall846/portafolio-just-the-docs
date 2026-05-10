@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sintonía Automática de PID Difuso"
-parent: "Tema 2.5.2 Controladores Difusos Adaptativos"
+parent: "2.5.2 Controladores Difusos Adaptativos"
 nav_order: 1
 ---
 
