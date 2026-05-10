@@ -85,7 +85,7 @@ El sistema difuso permite adaptar el PID en tiempo real:
 
 ## ⚠️ Consideraciones importantes
 
-### 🔴 Windup integral
+### Windup integral
 
 El ajuste dinámico de \(K_i\) puede generar acumulación de error si el sistema entra en saturación.
 
@@ -94,12 +94,9 @@ El ajuste dinámico de \(K_i\) puede generar acumulación de error si el sistema
 
 ---
 
-### 🔴 Transiciones bruscas
+### Transiciones bruscas
 
 Un mal diseño de funciones de membresía puede generar cambios abruptos en las ganancias.
-
-**Recomendación:**
-- Asegurar solapamiento adecuado entre funciones (~0.5)
 
 ---
 
