@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Sintonía Automática de PID Difuso"
-parent: "Capítulo 1: Redes de Control Inteligente"
-nav_order: 2
+parent: "Tema 2.5.2 Controladores Difusos Adaptativos"
+nav_order: 1
 ---
 
 ## Sintonía Automática de PID Difuso (`PID_autosinto.fis`)
