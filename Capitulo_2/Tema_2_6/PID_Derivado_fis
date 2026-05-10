@@ -2,8 +2,10 @@
 layout: default
 title: "Control Difuso de Acción Derivativa"
 parent: "Capítulo 2: Sistemas Difusos"
-nav_order: 1
+has_children: true
+nav_order: 6
 ---
+
 
 # Documentación Técnica: Control Difuso de Acción Derivativa (`PID_Derivado.fis`)
 
