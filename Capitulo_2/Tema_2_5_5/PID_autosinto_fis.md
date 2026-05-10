@@ -103,3 +103,8 @@ Un mal diseño de funciones de membresía puede generar cambios abruptos en las 
 ### Estabilidad del sistema
 
 Valores altos de \(K_p, K_i, K_d\) pueden provocar inestabilidad en sistemas subamortiguados.
+
+
+<a href="PID_autosinto.fis" class="btn" style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;">
+   Descargar PID_autosinto.fis
+</a>
