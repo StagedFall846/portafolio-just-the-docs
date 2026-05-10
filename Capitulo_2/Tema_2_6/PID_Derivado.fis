@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Control Difuso de Acción Derivativa"
-parent: "Capítulo 2: Sistemas Difusos"
+parent: "2.6 Controladores difusos convencionales (implícito)"
 nav_order: 1
 ---
 
