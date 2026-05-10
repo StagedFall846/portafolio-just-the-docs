@@ -2,7 +2,7 @@
 layout: default
 title: "2.6 Controladores difusos convencionales (implícito)"
 parent: "Capítulo 2: Sistemas Difusos"
-has_children: false
+has_children: true
 nav_order: 6
 ---
 
