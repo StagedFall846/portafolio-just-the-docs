@@ -81,4 +81,16 @@ Al configurar los bloques `To Workspace`, asegúrate de seleccionar el formato `
 
 ---
 
-[Descargar PID_para_RNN.slx](/assets/PID_para_RNN.slx){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
+---
+
+### 💾 Modelos de Simulación (Simulink)
+
+Descarga el modelo principal en lazo cerrado junto con su archivo de autorrecuperación para asegurar la continuidad de tus pruebas en MATLAB:
+
+<a href="./PID_para_RNN.slx" class="btn" style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6; margin-right: 12px; margin-bottom: 10px;">
+   📊 Descargar PID_para_RNN.slx
+</a>
+
+<a href="./PID_para_RNN.slx.autosave" class="btn" style="text-decoration: none; display: inline-block; background-color: #f5f5f5; color: #616161; border: 1px solid #bdbdbd; margin-bottom: 10px;">
+   ⏳ Descargar PID_para_RNN.slx.autosave
+</a>
