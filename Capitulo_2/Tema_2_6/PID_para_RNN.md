@@ -17,7 +17,7 @@ nav_order: 2
 
 - Configurar un lazo de control cerrado en Simulink que actúe como la planta experimental base.
 - Sintonizar un controlador convencional/difuso que estabilice el sistema ante entradas tipo escalón.
-- Exportar los vectores de entrada (torque/acción de control $u$) y los vectores de estado (error $e$ y posiciones $q$) al espacio de trabajo (*Workspace*) de MATLAB.
+- Exportar los vectores de entrada (torque/acción de control `u`) y los vectores de estado (error `e` y posiciones `q`) al espacio de trabajo (*Workspace*) de MATLAB.
 - Asegurar la persistencia y el muestreo correcto de los datos dinámicos para evitar problemas de desfase temporal en la red neuronal.
 
 ---
@@ -30,8 +30,8 @@ El lazo de control se encarga de guiar al sistema hacia una referencia predefini
 
 ### Estructura del sistema de adquisición
 
-- **Entradas del Lazo:** Referencias de trayectoria/posición $[q_d]$
-- **Variables Capturadas (Workspace):** Señal de control ($u$), vector de error ($e$) y estados de la planta ($q$)
+- **Entradas del Lazo:** Referencias de trayectoria/posición `[qd]`
+- **Variables Capturadas (Workspace):** Señal de control (`u`), vector de error (`e`) y estados de la planta (`q`)
 - **Tipo de Simulación:** Tiempo continuo / Tiempo discreto con paso fijo (*Fixed-step*)
 - **Propósito Final:** Generación de base de datos `.mat` para entrenamiento de arquitecturas RNN
 
@@ -40,12 +40,12 @@ El lazo de control se encarga de guiar al sistema hacia una referencia predefini
 ### Variables del sistema
 
 #### Entradas de la Planta / Salidas del Controlador:
-- Action de Control ($u$) : `[-10 a 10] V` o `[N·m]` (dependiendo del actuador)  
-- Señal de Referencia ($r$) : `[-5 a 5]` (unidades de posición/grados)  
+- Acción de Control (`u`) : `[-10 a 10] V` o `[N·m]` (dependiendo del actuador)  
+- Señal de Referencia (`r`) : `[-5 a 5]` (unidades de posición/grados)  
 
 #### Variables de Estado Monitoreadas:
-- Vector de Error ($e$) : `[-10 a 10]` (Diferencia entre referencia y salida real)  
-- Posición Angular Real ($q_0$) : `[-3.14 a 3.14] rad` (Respuesta dinámica del sistema)  
+- Vector de Error (`e`) : `[-10 a 10]` (Diferencia entre referencia y salida real)  
+- Posición Angular Real (`q0`) : `[-3.14 a 3.14] rad` (Respuesta dinámica del sistema)  
 
 ---
 
@@ -53,10 +53,10 @@ El lazo de control se encarga de guiar al sistema hacia una referencia predefini
 
 El flujo de operaciones en el diagrama de bloques sigue una secuencia estrictamente temporizada:
 
-- **Referencia $\rightarrow$ Comparador:** Se genera la señal de error dinámico continua $e(t) = r(t) - y(t)$.
-- **Error $\rightarrow$ Controlador Base:** El bloque de control calcula la acción necesaria ($u$) para minimizar el error basándose en ganancias fijas o mapeo heurístico.
-- **Acción de Control $\rightarrow$ Planta:** La señal $u$ excita los bloques dinámicos/función de transferencia de la planta mecatrónica.
-- **Líneas de Intercepción $\rightarrow$ Workspace:** Las señales $u(t)$ y $e(t)$ se configuran en formato de *Array* o *Structure with time* con un periodo de muestreo constante $\Delta t$, garantizando la sincronía necesaria para algoritmos de aprendizaje de series temporales.
+- **Referencia -> Comparador:** Se genera la señal de error dinámico continua `e(t) = r(t) - y(t)`.
+- **Error -> Controlador Base:** El bloque de control calcula la acción necesaria (`u`) para minimizar el error basándose en ganancias fijas o mapeo heurístico.
+- **Acción de Control -> Planta:** La señal `u` excita los bloques dinámicos/función de transferencia de la planta mecatrónica.
+- **Líneas de Intercepción -> Workspace:** Las señales `u(t)` y `e(t)` se configuran en formato de *Array* o *Structure with time* con un periodo de muestreo constante `dt`, garantizando la sincronía necesaria para algoritmos de aprendizaje de series temporales.
 
 ---
 
@@ -78,8 +78,6 @@ El controlador base debe someter a la planta a una variedad amplia de movimiento
 
 ### Formato de Exportación
 Al configurar los bloques `To Workspace`, asegúrate de seleccionar el formato `2D Array` o `Matrix`. El formato por defecto `Timeseries` requiere un preprocesamiento adicional en MATLAB mediante comandos como `squeeze` antes de poder ingresar los datos a la *Neural Network Toolbox*.
-
----
 
 ---
 
