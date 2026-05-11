@@ -68,19 +68,6 @@ El flujo de operaciones en el diagrama de bloques sigue una secuencia estrictame
 
 ---
 
-## Consideraciones importantes
-
-### Periodo de Muestreo Constante
-Es crítico configurar la simulación en Simulink con un solucionador de paso fijo (*Fixed-step solver*). Un paso variable destruye la estructura equidistante de los datos, volviendo los vectores inservibles para el entrenamiento de una Red Neuronal Recurrente.
-
-### Rango de Excitación de Datos
-El controlador base debe someter a la planta a una variedad amplia de movimientos y frecuencias (frecuentemente usando señales pseudoaleatorias o múltiples escalones). Si los datos de entrenamiento solo contienen una posición fija, la red neuronal no aprenderá la dinámica general del sistema.
-
-### Formato de Exportación
-Al configurar los bloques `To Workspace`, asegúrate de seleccionar el formato `2D Array` o `Matrix`. El formato por defecto `Timeseries` requiere un preprocesamiento adicional en MATLAB mediante comandos como `squeeze` antes de poder ingresar los datos a la *Neural Network Toolbox*.
-
----
-
 ### 💾 Modelos de Simulación (Simulink)
 
 Descarga el modelo principal en lazo cerrado junto con su archivo de autorrecuperación para asegurar la continuidad de tus pruebas en MATLAB:
