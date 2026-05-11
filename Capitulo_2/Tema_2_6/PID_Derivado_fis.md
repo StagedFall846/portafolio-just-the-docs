@@ -2,64 +2,90 @@
 layout: default
 title: "Control Difuso de Acción Derivativa"
 parent: "2.6 Controladores difusos convencionales (implícito)"
-grand_parent: "Capítulo 2: Sistemas Difusos"
 nav_order: 1
 ---
 
+## Control Difuso de Acción Derivativa (`PID_Derivado.fis`)
 
-# Documentación Técnica: Control Difuso de Acción Derivativa (`PID_Derivado.fis`)
-
-## Objetivos del Ejercicio
-
-- **Diseñar un Sistema de Inferencia Difuso (FIS)** tipo Mamdani optimizado para calcular dinámicamente la variación de la acción derivativa ($d\_u$) de un lazo de control.
-- **Mitigar el sobretiro dinámico (*overshoot*)** en plantas propensas a oscilaciones bruscas ante cambios tipo escalón.
-- **Analizar el impacto de derivadas de orden superior** (error, primera derivada y segunda derivada del error) en la anticipación del comportamiento transitorio del sistema.
+**Proyecto:** Control derivativo difuso mediante lógica difusa  
+**Objetivo general:** Diseñar e implementar un sistema de inferencia difusa tipo Mamdani para calcular dinámicamente la acción derivativa \(d_u\) de un lazo de control, reduciendo sobretiros y oscilaciones bruscas.  
 
 ---
 
-## Descripción General y Enfoque
+## Objetivo de la práctica
 
-La acción derivativa clásica en un PID ($K_d \cdot \frac{de(t)}{dt}$) permite "mirar al futuro" y frenar el sistema si se aproxima demasiado rápido a la referencia. Sin embargo, un término derivativo estático es muy sensible al ruido y puede desgastar los actuadores.
-
-**`PID_Derivado.fis`** es un enfoque **inteligente y simplificado**, usando solo **3 reglas** que mapean el estado dinámico del error para generar un ajuste derivativo suave ($d\_u$).
-
-El sistema analiza no solo la dirección del error, sino también **la aceleración del error** ($dd\_error$).
-
----
-
-## Análisis y Consideraciones (Errores Comunes)
-
-### 1. Amplificación de Ruido por Doble Derivación
-
-La segunda derivada ($dd\_error$) amplifica cualquier perturbación.
-
-**Prevención:** usar **filtros pasa-bajos** en los bloques derivados antes de entrar al FIS.
-
-```text
-Señal de Error ──>[Derivada]──>[Filtro Pasa-Bajos]──> d_error
-```
-
-### Saturación de Salida
-
-Con el rango `[-10 10]`, si la escala en Simulink no está calibrada, $d\_u$ puede quedarse en +10/-10, actuando como un control On-Off en lugar de suave.
+- Implementar un sistema de inferencia difusa (FIS) para generar un ajuste derivativo suave.  
+- Mitigar sobretiros (*overshoot*) en sistemas con respuesta rápida.  
+- Analizar la influencia de derivadas de primer y segundo orden del error en el control transitorio.  
+- Integrar el sistema en Simulink para su evaluación en tiempo real.  
 
 ---
 
-## Resultados Esperados
+## Descripción del ejercicio
 
-Al implementar este controlador en `PID_para_RNN.slx`:
+En este ejercicio se implementa un **control derivativo difuso**, donde un FIS tipo Mamdani ajusta la acción derivativa en función de:  
 
-- **Curva de respuesta temporal:** acercamiento suave a la referencia, críticamente amortiguado, con pico de sobretiro reducido.  
-- **Esfuerzo de control:** señal al actuador sin oscilaciones de alta frecuencia gracias a la salida Gaussiana.
+- Error \(e(t)\)  
+- Primera derivada del error \(de/dt\)  
+- Segunda derivada del error \(d^2e/dt^2\)  
+
+El sistema busca anticipar el comportamiento transitorio y suavizar la señal de control, evitando picos abruptos y desgaste de actuadores.  
+
+### Estructura del sistema difuso
+
+- **Entradas:** 3  
+- **Salida:** 1 (acción derivativa \(d_u\))  
+- **Reglas difusas:** 3  
+- **Tipo de FIS:** Mamdani  
 
 ---
 
-## 6. Detalles Adicionales: Segunda Derivada
+### Variables del sistema
 
-- $e$ → posición relativa al objetivo  
-- $d\_error$ → velocidad de aproximación o alejamiento  
-- $dd\_error$ → aceleración del error  
+#### Entradas:
+- Error \(e\): `[-20, 20]`  
+- Derivada del error \(d_error\): `[-20, 20]`  
+- Segunda derivada \(dd_error\): `[-20, 20]`  
 
-Con $dd\_error$, el controlador puede **predecir** y ajustar la acción derivativa antes de que ocurra un sobretiro o choque contra la referencia.
+#### Salida:
+- Acción derivativa \(d_u\): `[-10, 10]`  
 
 ---
+
+### Lógica de control difusa
+
+- Error creciente → ajustar \(d_u\) para frenar la aproximación  
+- Cambio rápido del error → aumentar corrección derivativa  
+- Aceleración del error (\(dd_error\)) → predecir sobretiros y suavizar la acción  
+
+---
+
+### Comportamiento esperado
+
+El controlador difuso permite:  
+
+- Acercamiento suave a la referencia  
+- Reducción de sobretiro crítico  
+- Señal de control sin oscilaciones de alta frecuencia  
+- Mejora en estabilidad transitoria  
+
+---
+
+## Consideraciones importantes
+
+### Amplificación de ruido
+
+La segunda derivada amplifica perturbaciones.  
+**Prevención:** usar filtros pasa-bajos antes de ingresar la señal al FIS.  
+
+### Saturación de salida
+
+Rango limitado `[-10, 10]` puede producir control tipo On-Off si no se calibra correctamente la escala de Simulink.  
+
+### Integración en Simulink
+
+Recomendada para `PID_para_RNN.slx` con señal de control suavizada y predicción de sobretiros mediante \(dd_error\).  
+
+---
+
+[Descargar PID_Derivado.fis](/assets/PID_Derivado.fis){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
