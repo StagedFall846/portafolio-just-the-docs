@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Control Difuso de Acción Derivativa"
-parent: "3.7 ANN en control"
 nav_order: 1
 ---
 
