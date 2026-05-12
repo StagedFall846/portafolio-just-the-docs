@@ -30,5 +30,3 @@ Como puente hacia las aplicaciones multidisciplinarias de este portafolio, se ut
 A través de este modelo, se adquieren las señales temporales del error del sistema ($e$) y la acción de control resultante ($u$). Estas variables constituyen el conjunto de datos (*dataset*) fundamental para el entrenamiento supervisado de redes autorregresivas, permitiendo la transición matemática de un controlador heurístico a uno inteligente de alta velocidad.
 
 ---
-
-¿Deseas explorar los detalles del controlador base utilizado para la recolección de datos? Consulta el apartado de implementación técnica a continuación.
