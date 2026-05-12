@@ -6,6 +6,7 @@ has_children: true
 ---
 
 # Capítulo 3: Redes Neuronales Artificiales
+#3.7 ANN en control
 
 En este capítulo se explora el diseño, entrenamiento e implementación de sistemas basados en **Redes Neuronales Artificiales** (ANN). A diferencia de la lógica difusa basada en reglas heurísticas lingüísticas, este enfoque se fundamenta en la capacidad de aprendizaje a partir de datos dinámicos, permitiendo aproximar comportamientos altamente complejos, no lineales y paralelos, ideales para la identificación y el control inteligente de sistemas mecatrónicos.
 
@@ -28,4 +29,4 @@ A continuación, se presentan las aplicaciones y simulaciones prácticas desarro
 
 > **Nota Técnica:** Los ejercicios analíticos del capítulo incluyen simulaciones de clasificación lineal mediante el perceptrón simple (funciones AND, OR, NAND, NOR) y la resolución de problemas no lineales mediante el perceptrón multicapa con optimización basada en el gradiente descendiente.
 
-Utiliza el menú lateral para explorar las metodologías de entrenamiento, códigos en MATLAB y los resultados de simulación en Simulink.
+Utiliza el menú lateral para explorar las metodologías de entrenamien
