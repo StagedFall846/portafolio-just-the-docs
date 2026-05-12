@@ -1,9 +1,7 @@
 ---
 layout: default
 title: "3.7 ANN en control"
-parent: "Capítulo 3: Redes neuronales"
-has_children: true
-nav_order: 7
+nav_order: 6
 ---
 
 # Sección 3.7: ANN en control
