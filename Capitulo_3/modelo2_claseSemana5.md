@@ -70,17 +70,6 @@ Describe las reglas generales que rigen el comportamiento del controlador inteli
 
 ---
 
-## Consideraciones importantes
 
-### Simplificación de la Planta
-La función de transferencia de la planta implementada en el diagrama presenta términos semejantes en el denominador ($s^2 + 2s - 5s + 2s - 10$). Para su análisis matemático formal y limpieza del reporte, se debe reducir a $s^2 - s - 10$, haciendo evidente que se trata de un sistema originalmente inestable en lazo abierto.
-
-### Rol de la Acción Integral Externa
-El bloque integrador $\frac{1}{s}$ colocado a la salida del bloque inteligente es crítico. Permite que el controlador difuso/neuronal calcule únicamente los cambios incrementales de la señal de control, absorbiendo el error remanente y suavizando la respuesta dinámica.
-
-### Sintonización de Ganancias de Entrada
-Las ganancias multiplicativas (1, 80 y 8) situadas antes del bloque inteligente actúan como factores de escala. Modificar estos valores altera drásticamente la sensibilidad del controlador y es el paso equivalente a la sintonización fina de los pesos sinápticos o funciones de membresía.
-
----
 
 [Descargar modelo2_claseSemana5.fis](/assets/modelo2_claseSemana5.fis){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
