@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "3.7 ANN en control"
-nav_order: 6
+nav_order: 7
+has_children: true
 ---
 
 # Sección 3.7: ANN en control
