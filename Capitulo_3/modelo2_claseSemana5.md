@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Control Supervisado Híbrido: PID vs. Lógica Inteligente"
-parent: "Capítulo 3: Redes Neuronales"
+parent: "Capítulo 3: Redes Neuronales Artificiales"
 nav_order: 1
 ---
 
