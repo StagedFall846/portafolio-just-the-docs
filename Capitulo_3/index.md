@@ -5,28 +5,27 @@ nav_order: 7
 has_children: true
 ---
 
-# Sección 3.7: ANN en control
+# Capítulo 3: Redes Neuronales Artificiales
 
-En el ámbito de la automatización y la mecatrónica, las Redes Neuronales Artificiales (ANN) se consolidan como una herramienta robusta para superar las limitaciones de los algoritmos de control clásicos ante plantas altamente no lineales, variantes en el tiempo o con dinámicas complejas. 
+En este capítulo se explora el diseño, entrenamiento e implementación de sistemas basados en **Redes Neuronales Artificiales** (ANN). A diferencia de la lógica difusa basada en reglas heurísticas lingüísticas, este enfoque se fundamenta en la capacidad de aprendizaje a partir de datos dinámicos, permitiendo aproximar comportamientos altamente complejos, no lineales y paralelos, ideales para la identificación y el control inteligente de sistemas mecatrónicos.
 
-Esta sección explora cómo se acoplan las arquitecturas neuronales dentro de los lazos de regulación industriales, enfocándose principalmente en la emulación e hibridación de estrategias de control preexistentes.
+## Fundamentos de las Redes Neuronales
+Una red neuronal artificial actúa como un **procesador paralelo masivamente distribuido** que almacena conocimiento experimental mediante un proceso estructurado en tres componentes esenciales:
+1. **Arquitectura y Topología:** Organización de unidades de procesamiento simple (neuronas) en estructuras monocapa (como el perceptrón lineal) o multicapa (MLP) con conexiones autorrecurrentes o unidireccionales.
+2. **Mecanismo de Aprendizaje:** Ajuste dinámico de los pesos sinápticos y *bias* a través de algoritmos de entrenamiento supervisados (regla de Hebb, *Backpropagation*), no supervisados o por refuerzo.
+3. **Esquemas de Control Inteligente:** Integración de las redes neuronales en lazo cerrado para la identificación de plantas dinámicas, control inverso o control supervisado mediante el mapeo de trayectorias de referencia.
 
----
+## Contenido del Capítulo
+A continuación, se presentan las aplicaciones y simulaciones prácticas desarrolladas en este módulo:
 
-## Esquemas Fundamentales de Control Neuronal
+### 1. Modelado e Identificación de Sistemas (Sección 3.9)
+* **Persistencia de Excitación (PE):** Análisis y pruebas de señales de entrada de alta riqueza espectral (como ruido PRBS, RBS y BLWN) diseñadas para excitar todos los modos dinámicos de una planta y garantizar un entrenamiento neuronal robusto.
 
-De acuerdo con la topología del lazo y el rol que desempeña la red, se implementan tres configuraciones principales:
-
-1. **Identificación de Sistemas:** La red neuronal actúa como un estimador dinámico en paralelo, aprendiendo la función de transferencia o el comportamiento en variables de estado de la planta a partir de datos históricos de entrada y salida.
-2. **Control Supervisado:** La red se entrena utilizando como "maestro" o supervisor a un controlador ya operativo (ya sea un PID convencional, un operario humano o un sistema difuso heurístico). El objetivo es que la red aprenda a replicar fielmente la ley de control, ofreciendo menor tiempo de cómputo y mayor flexibilidad ante perturbaciones.
-3. **Control Inverso:** Se obtiene computacionalmente el modelo inverso del sistema físico. La red procesa la salida deseada (referencia) para calcular de manera directa la señal de excitación adecuada que debe inyectarse al actuador.
-
----
-
-## Entorno Experimental en Simulink
-
-Como puente hacia las aplicaciones multidisciplinarias de este portafolio, se utiliza un entorno de simulación dinámico en **Simulink** que contrasta un lazo de control clásico frente a un esquema de **Control Difuso Adaptativo**. 
-
-A través de este modelo, se adquieren las señales temporales del error del sistema ($e$) y la acción de control resultante ($u$). Estas variables constituyen el conjunto de datos (*dataset*) fundamental para el entrenamiento supervisado de redes autorregresivas, permitiendo la transición matemática de un controlador heurístico a uno inteligente de alta velocidad.
+### 2. Control Inteligente Supervisado (Sección 3.6.2)
+* **modelo2_claseSemana5.fis:** Implementación de una estructura híbrida en Simulink donde un controlador clásico PID($s$) opera como supervisor en paralelo con un bloque de control inteligente. El objetivo es evaluar la capacidad de aproximación y la estabilidad de la planta ante perturbaciones dinámicas.
 
 ---
+
+> **Nota Técnica:** Los ejercicios analíticos del capítulo incluyen simulaciones de clasificación lineal mediante el perceptrón simple (funciones AND, OR, NAND, NOR) y la resolución de problemas no lineales mediante el perceptrón multicapa con optimización basada en el gradiente descendiente.
+
+Utiliza el menú lateral para explorar las metodologías de entrenamiento, códigos en MATLAB y los resultados de simulación en Simulink.
