@@ -1,12 +1,11 @@
 ---
 layout: default
-title: "3.7 ANN en control"
+title: "Capítulo 3: Redes Neuronales Artificiales"
 nav_order: 7
 has_children: true
 ---
 
 # Capítulo 3: Redes Neuronales Artificiales
-#3.7 ANN en control
 
 En este capítulo se explora el diseño, entrenamiento e implementación de sistemas basados en **Redes Neuronales Artificiales** (ANN). A diferencia de la lógica difusa basada en reglas heurísticas lingüísticas, este enfoque se fundamenta en la capacidad de aprendizaje a partir de datos dinámicos, permitiendo aproximar comportamientos altamente complejos, no lineales y paralelos, ideales para la identificación y el control inteligente de sistemas mecatrónicos.
 
