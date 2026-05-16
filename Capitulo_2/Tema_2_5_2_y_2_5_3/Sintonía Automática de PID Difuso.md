@@ -107,6 +107,4 @@ Valores altos de \(K_p, K_i, K_d\) pueden provocar inestabilidad en sistemas sub
 
 
 
-<a href="/assets/PID_autosinto.fis" class="btn" style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;">
-   Descargar PID_autosinto.fis
-</a>
+[Descargar]([https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_2/Tema_2_5_1/PID_Derivado.fis](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_2/Tema_2_5_2_y_2_5_3/PID_autosinto.fis)){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
