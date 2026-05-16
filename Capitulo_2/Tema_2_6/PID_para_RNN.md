@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Estructura de Control Base para Datos"
-parent: "2.6 Controladores difusos convencionales (implícito)"
+parent: "Controladores difusos convencionales (implícito)"
 grand_parent: "Capítulo 2: Sistemas Difusos"
 nav_order: 2
 ---
