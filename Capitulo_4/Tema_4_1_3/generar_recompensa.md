@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ejercicio 1"
-parent: "Señal de Recompensa (Sección 4.1.3)"
+parent: "Señal de Recompensa "
 grand_parent: "Capítulo 4: Computación Evolutiva y Aprendizaje Reforzado"
 nav_order: 1
 ---
