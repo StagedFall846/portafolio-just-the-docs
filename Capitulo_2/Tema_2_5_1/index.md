@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Controladores Difusos Directos (Sección 2.5.1)
+title: "Controladores Difusos Directos (Sección 2.5.1)"
 parent: "Capítulo 2: Sistemas Difusos"
 has_children: true
 nav_order: 5
