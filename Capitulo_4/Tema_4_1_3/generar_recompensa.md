@@ -81,3 +81,5 @@ recompensa = normrnd(mu, sigma, 1, 1);
 recompensa = max(0, recompensa);
 
 end
+
+```
