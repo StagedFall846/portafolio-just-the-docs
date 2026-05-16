@@ -86,6 +86,5 @@ end
 
 
 
-[Descargar generarRecompensa.m](/Capitulo_4/Tema_4_1_3/generarRecompensa.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
-
+[Descargar generarRecompensa.m](generarRecompensa.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
 
