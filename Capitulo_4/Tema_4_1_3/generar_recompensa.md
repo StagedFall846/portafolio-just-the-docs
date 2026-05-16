@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Generador de Recompensas Estocásticas"
-parent: "Control Convencional e Inteligente"
-grand_parent: "Señal de Recompensa (Sección 4.1.3)"
+title: "Ejercicio 1"
+parent: "Señal de Recompensa (Sección 4.1.3)"
+grand_parent: "Capítulo 4: Computación Evolutiva y Aprendizaje Reforzado"
 nav_order: 1
 ---
 
