@@ -1,0 +1,74 @@
+% ========================================================================
+% Programa: Aproximación por 5 Rectas (Rangos Solapados)
+% Función base: y = -2x - x^2
+% ========================================================================
+
+clear; clc; close all;
+
+% Definimos los datos exactos de la tabla en la imagen
+% Estructura: [x_inicial, x_final, R (Red), G (Green), B (Blue)]
+data = [
+    -10, -6,  0,   0.8, 0;    % f1: Verde
+     -8,  0,  0,   0.4, 1;    % f2: Azul
+     -4,  2,  0.8, 0.2, 0.2;  % f3: Rojo
+     -2,  6,  0.5, 0.5, 0.5;  % f4: Gris
+      4,  8,  0,   0,   0     % f5: Negro
+];
+
+num_funciones = size(data, 1);
+
+fprintf('==========================================================\n');
+fprintf(' CÁLCULO DE LAS 5 RECTAS (y = mx + b)\n');
+fprintf('==========================================================\n');
+
+% Preparamos la figura
+figure('Color', 'w');
+hold on; grid on;
+
+% 1. Graficar la función original (Parábola) de fondo
+x_fino = linspace(-12, 12, 500);
+y_real = -2*x_fino - x_fino.^2;
+plot(x_fino, y_real, 'Color', [0.8 0.8 0.8], 'LineWidth', 3, 'DisplayName', 'Original: -2x - x^2');
+
+% 2. Bucle para calcular y graficar cada una de las 5 funciones
+for i = 1:num_funciones
+    x1 = data(i, 1);
+    x2 = data(i, 2);
+    color_linea = data(i, 3:5);
+    
+    % Calcular y1 y y2 usando la función original
+    y1 = -2*x1 - x1^2;
+    y2 = -2*x2 - x2^2;
+    
+    % Calcular pendiente (m) y ordenada (b)
+    m = (y2 - y1) / (x2 - x1);
+    b = y1 - (m * x1);
+    
+    % Mostrar la ecuación en consola
+    fprintf('f%d -> Rango [%2d, %2d] | Puntos: (%d, %d) a (%d, %d)\n', ...
+            i, x1, x2, x1, y1, x2, y2);
+    
+    % Formato condicional para el signo de b
+    if b >= 0
+        fprintf('      Ecuación: y = %.2fx + %.2f\n', m, b);
+    else
+        fprintf('      Ecuación: y = %.2fx - %.2f\n', m, abs(b));
+    end
+    fprintf('----------------------------------------------------------\n');
+    
+    % Graficar el segmento de recta
+    x_seg = [x1, x2];
+    y_seg = [y1, y2];
+    plot(x_seg, y_seg, 'o-', 'LineWidth', 2, 'Color', color_linea, ...
+        'MarkerFaceColor', color_linea, 'DisplayName', sprintf('f%d', i));
+    
+    % Extender visualmente la recta (punteada) para ver la tangente/secante
+    % x_ext = linspace(x1-1, x2+1, 10);
+    % plot(x_ext, m*x_ext + b, '--', 'Color', color_linea, 'LineWidth', 1);
+end
+
+% Decoración del gráfico
+title('Aproximación por 5 Funciones (Secantes)');
+xlabel('x'); ylabel('y');
+legend('Location', 'South');
+axis([-11 9 -90 10]); % Ajustar zoom
