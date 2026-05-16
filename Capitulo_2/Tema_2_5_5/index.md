@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "2.5.2 Controladores Difusos Adaptativos"
+title: "Controladores Difusos Adaptativos"
 parent: "Capítulo 2: Sistemas Difusos"
 has_children: true
 nav_order: 5
 ---
 
-# 2.5.2 Controladores Difusos Adaptativos
+# Controladores Difusos Adaptativos
 
 Este subtema explora el diseño de sistemas de control capaces de modificar sus propios parámetros, como las funciones de membresía o las reglas de inferencia, en tiempo real. El objetivo principal es lograr que el controlador se ajuste dinámicamente ante cambios en la dinámica de la planta o la presencia de perturbaciones externas imprevistas.
 
