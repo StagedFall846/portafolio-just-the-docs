@@ -5,27 +5,38 @@ nav_order: 7
 has_children: true
 ---
 
-# Capítulo 3: Redes Neuronales Artificiales
+---
+layout: default
+title: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
+nav_order: 4
+has_children: true
+---
 
-En este capítulo se explora el diseño, entrenamiento e implementación de sistemas basados en **Redes Neuronales Artificiales** (ANN). A diferencia de la lógica difusa basada en reglas heurísticas lingüísticas, este enfoque se fundamenta en la capacidad de aprendizaje a partir de datos dinámicos, permitiendo aproximar comportamientos altamente complejos, no lineales y paralelos, ideales para la identificación y el control inteligente de sistemas mecatrónicos.
+# Capítulo 3: Redes Neuronales Artificiales (ANN)
 
-## Fundamentos de las Redes Neuronales
-Una red neuronal artificial actúa como un **procesador paralelo masivamente distribuido** que almacena conocimiento experimental mediante un proceso estructurado en tres componentes esenciales:
-1. **Arquitectura y Topología:** Organización de unidades de procesamiento simple (neuronas) en estructuras monocapa (como el perceptrón lineal) o multicapa (MLP) con conexiones autorrecurrentes o unidireccionales.
-2. **Mecanismo de Aprendizaje:** Ajuste dinámico de los pesos sinápticos y *bias* a través de algoritmos de entrenamiento supervisados (regla de Hebb, *Backpropagation*), no supervisados o por refuerzo.
-3. **Esquemas de Control Inteligente:** Integración de las redes neuronales en lazo cerrado para la identificación de plantas dinámicas, control inverso o control supervisado mediante el mapeo de trayectorias de referencia.
+Este capítulo aborda el diseño de sistemas inteligentes inspirados en el cerebro biológico. A diferencia de los algoritmos tradicionales que siguen instrucciones analíticas, las redes neuronales "aprenden" a resolver problemas complejos y altamente no lineales ajustando sus parámetros internos a partir de la experiencia (datos).
 
-## Contenido del Capítulo
-A continuación, se presentan las aplicaciones y simulaciones prácticas desarrolladas en este módulo:
+## 1. Arquitectura y Funcionamiento Básico
 
-### 1. Modelado e Identificación de Sistemas (Sección 3.9)
-* **Persistencia de Excitación (PE):** Análisis y pruebas de señales de entrada de alta riqueza espectral (como ruido PRBS, RBS y BLWN) diseñadas para excitar todos los modos dinámicos de una planta y garantizar un entrenamiento neuronal robusto.
+* **La Neurona Artificial:** Opera multiplicando señales de entrada por pesos sinápticos (que actúan como memoria), suma los resultados y los pasa por una función de activación (como la función Signo, ReLU o Sigmoide) para generar una salida.
+* **El Perceptrón:** Es la topología más simple (una sola capa). Clasifica datos linealmente separables (aprende compuertas lógicas como AND y OR, pero falla con XOR). Físicamente, puede construirse utilizando amplificadores operacionales (sumadores y comparadores).
 
-### 2. Control Inteligente Supervisado (Sección 3.6.2)
-* **modelo2_claseSemana5.fis:** Implementación de una estructura híbrida en Simulink donde un controlador clásico PID($s$) opera como supervisor en paralelo con un bloque de control inteligente. El objetivo es evaluar la capacidad de aproximación y la estabilidad de la planta ante perturbaciones dinámicas.
+## 2. Tipos de Aprendizaje
+
+* **Supervisado:** La red aprende comparando sus respuestas con un conjunto de salidas deseadas (etiquetas) proporcionadas por el diseñador.
+* **No Supervisado:** La red analiza datos de entrada sin etiquetar para encontrar patrones ocultos o agrupaciones.
+* **Reforzado:** La red aprende mediante un sistema de recompensas y penalizaciones (prueba y error) para maximizar un objetivo.
+
+## 3. Superando las Limitaciones: Multicapa y Backpropagation
+
+* **Perceptrón Multicapa (MLP):** Agrega "capas ocultas" de neuronas, lo que permite resolver problemas no lineales complejos (como la función XOR).
+* **Retropropagación (*Backpropagation*):** Es el algoritmo clave para entrenar redes multicapa. Consiste en una pasada hacia adelante (*forward*) para calcular la salida, medir el error, y una pasada hacia atrás (*backward*) que utiliza cálculo diferencial (gradiente descendiente) para ajustar matemáticamente los pesos de todas las capas ocultas y minimizar el error.
+
+## 4. Aplicación en Ingeniería de Control
+
+* **Esquemas Comunes:** Las redes se usan para **Identificación de sistemas** (aprender el modelo matemático de la planta), **Control supervisado** (clonar a un controlador existente) y **Control inverso** (aprender la inversa de la planta para forzar su comportamiento).
 
 ---
 
-> **Nota Técnica:** Los ejercicios analíticos del capítulo incluyen simulaciones de clasificación lineal mediante el perceptrón simple (funciones AND, OR, NAND, NOR) y la resolución de problemas no lineales mediante el perceptrón multicapa con optimización basada en el gradiente descendiente.
-
-Utiliza el menú lateral para explorar las metodologías de entrenamien
+> ### 🏆 Regla de Oro: Persistencia de Excitación (PE)
+> Para que una red neuronal aprenda verdaderamente la dinámica de un sistema físico, los datos de entrenamiento deben provenir de señales ricas en frecuencias (como el Ruido Binario PRBS). Señales simples, como un escalón unitario, no proporcionan suficiente información y generan modelos deficientes.
