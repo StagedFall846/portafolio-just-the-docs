@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ejercicio 1"
+title: "Generador de Recompensas Estocásticas (MATLAB)"
 parent: "Señal de Recompensa "
 grand_parent: "Capítulo 4: Computación Evolutiva y Aprendizaje Reforzado"
 nav_order: 1
