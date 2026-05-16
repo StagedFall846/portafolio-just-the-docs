@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Control Difuso de Acción Derivativa"
-parent: "Controladores difusos convencionales (implícito)"
+parent: "Controladores Difusos Adaptativos"
 nav_order: 1
 ---
 
