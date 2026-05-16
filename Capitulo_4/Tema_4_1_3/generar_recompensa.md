@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Generador de Recompensas Estocásticas"
-parent: "1.2 Control Convencional e Inteligente"
-grand_parent: "Capítulo 1: Redes Neuronales"
+parent: "Control Convencional e Inteligente"
+grand_parent: "Señal de Recompensa (Sección 4.1.3)"
 nav_order: 1
 ---
 
