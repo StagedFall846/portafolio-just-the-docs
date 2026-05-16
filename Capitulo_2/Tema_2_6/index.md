@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "2.6 Controladores difusos convencionales (implícito)"
+title: "Controladores difusos convencionales (implícito)"
 parent: "Capítulo 2: Sistemas Difusos"
 has_children: true
 nav_order: 6
 ---
 
-# Tema 2.6: Controladores difusos convencionales (implícito)
+# Controladores difusos convencionales (implícito)
 
 En este subtema se analiza el diseño y la aplicación de los controladores difusos convencionales. A diferencia de las estructuras auto-sintonizables complejas, aquí se explora cómo mapear la experiencia heurística directamente sobre acciones de control específicas y cómo estas estructuras sirven como base comparativa frente a metodologías de control inteligente basados en redes neuronales.
 
