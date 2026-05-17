@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Capítulo 3: Redes Neuronales Artificiales"
+title: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
 nav_order: 7
 has_children: true
 ---
