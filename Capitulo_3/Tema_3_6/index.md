@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: "3.6 ANN en control"
@@ -6,7 +5,6 @@ parent: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
 has_children: true
 nav_order: 6
 ---
-
 
 # Redes Neuronales en Control Automático
 
