@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Control Difuso de Acción Derivativa
-parent: Controladores Difusos Directos (Sección 2.5.1)
-grand_parent: Capítulo 2: Sistemas Difusos
+title: "Control Difuso de Acción Derivativa"
+parent: "Controladores Difusos Directos (Sección 2.5.1)"
+grand_parent: "Capítulo 2: Sistemas Difusos"
 nav_order: 1
 ---
 
