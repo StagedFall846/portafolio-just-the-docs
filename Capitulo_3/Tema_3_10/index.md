@@ -1,0 +1,27 @@
+---
+layout: default
+title: "3.10 Implementación en MATLAB"
+parent: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
+has_children: true
+nav_order: 10
+---
+
+
+# Implementación en MATLAB
+
+Esta sección demuestra cómo llevar el diseño teórico de las redes neuronales a la práctica computacional utilizando software especializado, optimizando drásticamente el tiempo de desarrollo.
+
+## 1. Neural Network Toolbox
+Es la herramienta principal de MATLAB dedicada a las redes artificiales. Permite esquematizar, entrenar y realizar pruebas de confiabilidad sin necesidad de programar desde cero los algoritmos matemáticos complejos (como *Backpropagation*).
+
+## 2. Flujo de Trabajo en Código
+La creación y puesta en marcha de una red neuronal requiere seguir pasos muy puntuales dentro del entorno de desarrollo:
+
+1. **Creación:** Se define la arquitectura de la red (ej. `feedforwardnet`), especificando de manera explícita cuántas capas ocultas tendrá y el número de neuronas distribuidas en cada una de ellas.
+2. **Visualización y Ajuste:** Se puede inspeccionar gráficamente la topología, los pesos sinápticos y el flujo de señales utilizando el comando `view`.
+3. **Entrenamiento:** Mediante el comando `train`, la red ajusta sus parámetros internos automáticamente al procesar las matrices de datos de entrada y salidas deseadas (*Targets*) previamente estructuradas.
+
+---
+
+> ### 🔌 Integración con Simulink
+> Quizá la mayor ventaja mecatrónica de este flujo de trabajo es la función `gensim`. Este comando exporta automáticamente la red neuronal ya entrenada y la convierte directamente en un **Bloque Funcional de Simulink**, quedando listo para conectarse e interactuar dentro de un lazo de control cerrado junto al modelo de la planta física.
