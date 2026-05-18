@@ -27,7 +27,7 @@ La respuesta de la neurona depende de la **función signo**, la cual actúa como
 
 
 <p align="center">
-  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/FS.png?raw=true" alt="Icono de la gráfica de la función signo" width="500px">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/FS.png?raw=true" alt="Icono de la gráfica de la función signo" width="150px">
   <br>
   <em><b>Figura X:</b> Función signo.</em>
 </p>
@@ -37,7 +37,7 @@ La respuesta de la neurona depende de la **función signo**, la cual actúa como
 La salida del perceptrón se obtiene calculando la suma ponderada de todas las entradas y aplicando la función de activación sobre el resultado:
 
 <p align="center">
-  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/S.png?raw=true" alt="Ecuación de la salida y aplicando la función signo a la sumatoria de pesos por entradas" width="250px">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/S.png?raw=true" alt="Ecuación de la salida y aplicando la función signo a la sumatoria de pesos por entradas" width="150px">
   <br>
   <em><b>Figura X:</b> Ecuación de salida con función signo.</em>
 </p>
@@ -48,7 +48,7 @@ La salida del perceptrón se obtiene calculando la suma ponderada de todas las e
 El siguiente diagrama muestra el flujo de información desde los nodos de entrada, pasando por la suma de pesos sinápticos, hasta llegar al nodo de salida:
 
 <p align="center">
-  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/P.png?raw=true" alt="Diagrama de una neurona artificial mostrando nodos de entrada, pesos, sumatoria, función de activación y nodo de salida" width="350px">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/P.png?raw=true" alt="Diagrama de una neurona artificial mostrando nodos de entrada, pesos, sumatoria, función de activación y nodo de salida" width="150px">
   <br>
   <em><b>Figura X:</b> Modelo de una neurona artificial (perceptrón).</em>
 </p>
