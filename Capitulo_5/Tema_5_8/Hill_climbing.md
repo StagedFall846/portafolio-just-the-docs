@@ -1,11 +1,10 @@
 ---
 layout: default
-title: "Algoritmo Evolutivo Continuo (Rastrigin 2D)"
-parent: "4.5 Algoritmo Evolutivo Continuo"
-grand_parent: "Capítulo 4: Algoritmos Evolutivos"
+title: "Ejercicio Práctico de Aplicación"
+parent: "5.1 Casos de Estudio y Ejercicios Prácticos"
+grand_parent: "Capítulo 5: Implementación y Proyectos Avanzados"
 nav_order: 1
 ---
-
 
 ## Ejercicio 2 y 4: Implementación de Hill Climbing
 
