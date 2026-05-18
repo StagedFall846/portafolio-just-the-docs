@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: "3.7 Perceptrón"
