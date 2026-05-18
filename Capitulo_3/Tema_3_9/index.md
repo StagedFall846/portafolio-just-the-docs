@@ -6,7 +6,7 @@ has_children: true
 nav_order: 9
 ---
 
-# Modelado y Preparación de Datos
+# 3.9/3.9.1/3.10.2 Modelado y Preparación de Datos
 
 Esta sección aborda el paso más crítico antes de entrenar una red neuronal en software: garantizar que los datos recolectados sirvan para capturar la dinámica real del sistema físico.
 
