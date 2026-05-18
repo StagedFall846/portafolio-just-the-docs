@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "4.5 Algoritmo Evolutivo (Rastrigin 2D)"
+title: "Algoritmo UCB"
 parent: "Capítulo 4: Algoritmos Evolutivos"
 has_children: true
 nav_order: 2
 ---
+
 
 # Límite Superior de Confianza (UCB)
 
