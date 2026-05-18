@@ -2,6 +2,7 @@
 layout: default
 title: "Sintonía Automática de PID Difuso"
 parent: "Controladores Adaptativos y Ajustes (Secciones 2.5.2 y 2.5.3)"
+grand_parent: "Capítulo 2: Sistemas Difusos"
 nav_order: 1
 ---
 
