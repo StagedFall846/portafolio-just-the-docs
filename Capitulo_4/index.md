@@ -5,7 +5,6 @@ has_children: true
 nav_order: 4
 ---
 
-
 # Aprendizaje por Refuerzo (RL)
 
 Esta sección expande el panorama de la inteligencia artificial hacia el control interactivo: cómo un agente autónomo aprende a tomar decisiones óptimas en un entorno desconocido a base de prueba, error y recompensas (*Model-Free learning*).
@@ -14,8 +13,8 @@ Esta sección expande el panorama de la inteligencia artificial hacia el control
 
 Antes de tomar decisiones informadas, el agente debe aprender a evaluar matemáticamente qué tan "bueno" es encontrarse en un estado particular <span class="math">V(s)</span>.
 
-* **Monte Carlo (MC):** Aprende en retrospectiva. Obliga al agente a jugar un episodio completo hasta el final para sumar la recompensa total y, solo entonces, actualizar sus valores. Es lento y no aplicable a tareas infinitas o continuas.
-* **Diferencia Temporal - TD(0):** Aprende sobre la marcha (*Bootstrapping*). Actualiza su estimación paso a paso utilizando la recompensa inmediata observada más su propia predicción del siguiente estado.
+* **Monte Carlo (MC):** El agente aprende en retrospectiva. Obliga a jugar un episodio completo hasta el final para sumar la recompensa total y, solo entonces, actualizar sus valores. Es lento y no es aplicable a tareas infinitas o continuas.
+* **Diferencia Temporal - TD(0):** El agente aprende sobre la marcha (*Bootstrapping*). Actualiza su estimación paso a paso utilizando la recompensa inmediata observada más su propia predicción del siguiente estado.
 
 ## 2. Parámetros de Comportamiento
 
