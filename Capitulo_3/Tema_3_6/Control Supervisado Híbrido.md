@@ -6,11 +6,6 @@ grand_parent: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
 nav_order: 1
 ---
 
-layout: default
-title: "Control Supervisado Híbrido: PID vs. Lógica Inteligente"
-parent: "Capítulo 3: Redes Neuronales Artificiales"
-nav_order: 1
----
 
 ## Control Supervisado Híbrido (`modelo2_claseSemana5.fis`)
 
