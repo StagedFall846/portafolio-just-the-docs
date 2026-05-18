@@ -1,12 +1,10 @@
-
 ---
 layout: default
-title: "Inicio Optimista"
-parent: "Algoritmo Epsilon-Greedy"
-grand_parent: "Capítulo 4: Algoritmos Evolutivos"
+title: "Algoritmo Epsilon-Greedy"
+parent: "Capítulo 4: Algoritmos Evolutivos"
+has_children: true
 nav_order: 1
 ---
-
 
 ## Algoritmo $\epsilon$-Greedy con Inicio Optimista (MATLAB)
 
