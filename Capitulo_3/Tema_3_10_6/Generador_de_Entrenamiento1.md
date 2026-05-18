@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "Generador de Entrenamiento Cinemática Inversa"
-parent: "3.10 Implementación en MATLAB"
+title: "Comparativa de Arquitecturas NNET"
+parent: "3.10.6 Implementación de la red"
 grand_parent: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
 nav_order: 1
 ---
+# Comparativa de Arquitecturas NNET en Simulink
 
 ## Comparativa de Arquitecturas NNET en Simulink
 
@@ -42,25 +43,24 @@ Se utilizan tres configuraciones de redes neuronales:
 
 ## Imagenes 
 <p align="center">
-  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10/redes_preentrenadas1.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10_6/redes_preentrenadas1.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
   <br><i>Diagrama general del sistema en Simulink</i>
 </p>
 
 <p align="center">
-  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10/Function%20Fitting%20Neural%20Network.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10_6/Function%20Fitting%20Neural%20Network.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
   <br><i>Arquitectura de la Red de Ajuste de Funciones (2 capas)</i>
 </p>
 
 <p align="center">
-  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10/Feed-Forward%20Neural%20Network.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10_6/Feed-Forward%20Neural%20Network.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
   <br><i>Arquitectura de la Red Feed-Forward (3 capas)</i>
 </p>
 
 <p align="center">
-  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10/Custom%20Neural%20Network.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10_6/Custom%20Neural%20Network.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
   <br><i>Arquitectura de la Red Neuronal Personalizada</i>
 </p>
 
 
-
-[Descargar.slx](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10/redes_preentrenadas.slx){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
+[Descargar redes_preentrenadas.slx](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10_6/redes_preentrenadas.slx){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
