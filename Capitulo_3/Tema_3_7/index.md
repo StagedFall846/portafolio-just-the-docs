@@ -27,7 +27,7 @@ La respuesta de la neurona depende de la **función signo**, la cual actúa como
 
 
 <p align="center">
-  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/FS.png?raw=true" alt="Icono de la gráfica de la función signo" width="250px">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/FS.png?raw=true" alt="Icono de la gráfica de la función signo" width="500px">
   <br>
   <em><b>Figura X:</b> Función signo.</em>
 </p>
