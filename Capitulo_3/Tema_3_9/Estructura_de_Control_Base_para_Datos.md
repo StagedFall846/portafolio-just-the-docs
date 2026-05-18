@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Estructura de Control Base para Datos
-parent: 3.9 Modelado de sistemas con redes neuronales
-grand_parent: Capítulo 3: Redes Neuronales Artificiales (ANN)
+title: "Estructura de Control Base para Datos"
+parent: "3.9 Modelado de sistemas con redes neuronales"
+grand_parent: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
 nav_order: 1
 ---
 ## Estructura de Control Base para Datos (`PID_para_RNN.slx`)
