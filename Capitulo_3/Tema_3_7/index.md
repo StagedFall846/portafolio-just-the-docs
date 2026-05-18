@@ -20,24 +20,25 @@ Para el funcionamiento del perceptrón, se consideran los siguientes componentes
 La respuesta de la neurona depende de la **función signo**, la cual actúa como un limitador rígido:
 
 <p align="center">
-  <span class="math">
-    H(v) = \begin{cases} +1, & v \ge 0 \\ -1, & v < 0 \end{cases}
-  </span>
+  <img src="Capitulo_3/Tema_3_7/H.png" alt="Definición de la función matemática H(v)" width="250px">
+  <br>
+  <em><b>Figura X:</b> Función H(v).</em>
 </p>
 
 <p align="center">
-  <img src="assets/images/figura_3_14.png" alt="Gráfica de la función signo" width="250px">
+  <img src="Capitulo_3/Tema_3_7/FS.png" alt="Icono de la gráfica de la función signo" width="250px">
   <br>
-  <em><b>Figura 3.14:</b> Función signo.</em>
+  <em><b>Figura X:</b> Función signo.</em>
 </p>
+
 
 ## Cálculo de la Salida
 La salida del perceptrón se obtiene calculando la suma ponderada de todas las entradas y aplicando la función de activación sobre el resultado:
 
 <p align="center">
-  <span class="math">
-    y = \text{signo} \left( \sum_{j=1}^{d} w_j x_j \right)
-  </span>
+  <img src="Capitulo_3/Tema_3_7/S.png" alt="Ecuación de la salida y aplicando la función signo a la sumatoria de pesos por entradas" width="250px">
+  <br>
+  <em><b>Figura X:</b> Ecuación de salida con función signo.</em>
 </p>
 
 ---
@@ -46,9 +47,9 @@ La salida del perceptrón se obtiene calculando la suma ponderada de todas las e
 El siguiente diagrama muestra el flujo de información desde los nodos de entrada, pasando por la suma de pesos sinápticos, hasta llegar al nodo de salida:
 
 <p align="center">
-  <img src="assets/images/figura_3_15.png" alt="Diagrama estructural del perceptrón" width="400px">
+  <img src="Capitulo_3/Tema_3_7/P.png" alt="Diagrama de una neurona artificial mostrando nodos de entrada, pesos, sumatoria, función de activación y nodo de salida" width="350px">
   <br>
-  <em><b>Figura 3.15:</b> Modelo estructural del perceptrón.</em>
+  <em><b>Figura X:</b> Modelo de una neurona artificial (perceptrón).</em>
 </p>
 
 ---
