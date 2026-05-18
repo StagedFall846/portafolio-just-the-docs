@@ -1,10 +1,10 @@
 
 ---
 layout: default
-title: "Tema del Ejercicio 1"
+title: "4.1 Algoritmo Evolutivo Continuo"
 parent: "Capítulo 4: Algoritmos Evolutivos"
 has_children: true
-nav_order: 5
+nav_order: 1
 ---
 
 
