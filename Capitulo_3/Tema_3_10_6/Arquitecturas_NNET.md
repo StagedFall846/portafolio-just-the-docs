@@ -5,7 +5,6 @@ parent: "3.10.6 Implementación de la red"
 grand_parent: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
 nav_order: 1
 ---
-# Comparativa de Arquitecturas NNET en Simulink
 
 ## Comparativa de Arquitecturas NNET en Simulink
 
