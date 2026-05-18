@@ -6,9 +6,6 @@ grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
 
-# 4.5. Implementación de un Algoritmo Evolutivo Continuo (Rastrigin 2D) en MATLAB
-
-Aquí puedes documentar el desarrollo de tu algoritmo, la función de costo de Rastrigin en dos dimensiones, los parámetros de optimización (población, generaciones, mutación) y las gráficas de convergencia.
 
 ## Ejercicio 2 y 4: Implementación de Hill Climbing
 
@@ -74,4 +71,4 @@ function hill_climbing_ejercicio()
 end
 ```
 
-[Descargar algoritmo_evolutivo_continuo.m](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo4/Tema_4_11/algoritmo_evolutivo_continuo.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
+[[Descargar algoritmo_evolutivo_continuo.m](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo4/Tema_4_11/algoritmo_evolutivo_continuo.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_5/hill_climbing_ejercicio.m)
