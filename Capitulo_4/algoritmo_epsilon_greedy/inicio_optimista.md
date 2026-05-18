@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Algoritmo Epsilon-Greedy"
-parent: "Capítulo 4: Algoritmos Evolutivos"
-has_children: true
+title: "Inicio Optimista"
+parent: "Algoritmo Epsilon-Greedy"
+grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
 
