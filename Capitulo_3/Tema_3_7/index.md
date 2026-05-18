@@ -37,7 +37,7 @@ La respuesta de la neurona depende de la **función signo**, la cual actúa como
 La salida del perceptrón se obtiene calculando la suma ponderada de todas las entradas y aplicando la función de activación sobre el resultado:
 
 <p align="center">
-  <img src="Capitulo_3/Tema_3_7/S.png" alt="Ecuación de la salida y aplicando la función signo a la sumatoria de pesos por entradas" width="250px">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/S.png?raw=true" alt="Ecuación de la salida y aplicando la función signo a la sumatoria de pesos por entradas" width="250px">
   <br>
   <em><b>Figura X:</b> Ecuación de salida con función signo.</em>
 </p>
