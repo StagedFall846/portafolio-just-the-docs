@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ejercicio Perceptrón"
+title: "Perceptrón"
 parent: "3.7 Perceptrón"
 grand_parent: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
 nav_order: 1
