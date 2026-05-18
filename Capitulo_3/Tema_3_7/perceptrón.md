@@ -113,4 +113,4 @@ for i=1:lim_ep
 end
 ```
 
-[Descargar ejercicio_perceptron.m](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/ejercicio_perceptron.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
+[Descargar.m](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/ejercicio_perceptron.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
