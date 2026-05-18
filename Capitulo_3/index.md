@@ -5,13 +5,6 @@ nav_order: 4
 has_children: true
 ---
 
----
-layout: default
-title: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
-nav_order: 4
-has_children: true
----
-
 # Capítulo 3: Redes Neuronales Artificiales (ANN)
 
 Este capítulo aborda el diseño de sistemas inteligentes inspirados en el cerebro biológico. A diferencia de los algoritmos tradicionales que siguen instrucciones analíticas, las redes neuronales "aprenden" a resolver problemas complejos y altamente no lineales ajustando sus parámetros internos a partir de la experiencia (datos).
