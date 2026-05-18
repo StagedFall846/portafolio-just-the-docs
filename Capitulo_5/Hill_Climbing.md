@@ -1,8 +1,7 @@
 ---
 layout: default
-title: "Ejercicio Práctico de Aplicación"
-parent: "5.1 Casos de Estudio y Ejercicios Prácticos"
-grand_parent: "Capítulo 5: Implementación y Proyectos Avanzados"
+title: "Ejercicio Práctico del Capítulo 5"
+parent: "Capítulo 5: Implementación y Proyectos Avanzados"
 nav_order: 1
 ---
 
