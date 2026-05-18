@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "3.10 Implementación en MATLAB"
+title: "3.10.6 Implementación de la red"
 parent: "Capítulo 3: Redes Neuronales Artificiales (ANN)"
 has_children: true
-nav_order: 10
+nav_order: 12
 ---
+# 3.10.6 Implementación de la red
 
 
 # Implementación en MATLAB
