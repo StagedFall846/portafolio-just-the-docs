@@ -1,10 +1,12 @@
+
 ---
 layout: default
 title: "Tema del Ejercicio 1"
 parent: "Capítulo 4: Algoritmos Evolutivos"
 has_children: true
-nav_order: 1
+nav_order: 5
 ---
+
 
 
 # El Dilema de Exploración vs. Explotación
