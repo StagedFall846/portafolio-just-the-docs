@@ -1,8 +1,8 @@
 
 ---
 layout: default
-title: "Implementación en MATLAB"
-parent: "4.1 Algoritmo Evolutivo Continuo"
+title: "Inicio Optimista"
+parent: "Algoritmo Epsilon-Greedy"
 grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
