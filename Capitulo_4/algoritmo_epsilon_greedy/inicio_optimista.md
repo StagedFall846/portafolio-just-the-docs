@@ -1,8 +1,8 @@
 
 ---
 layout: default
-title: "Algoritmo $\epsilon$-Greedy"
-parent: "Tema del Ejercicio 1"
+title: "Implementación en MATLAB"
+parent: "4.1 Algoritmo Evolutivo Continuo"
 grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
