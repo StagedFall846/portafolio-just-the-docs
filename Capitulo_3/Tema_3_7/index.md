@@ -48,7 +48,7 @@ La salida del perceptrón se obtiene calculando la suma ponderada de todas las e
 El siguiente diagrama muestra el flujo de información desde los nodos de entrada, pasando por la suma de pesos sinápticos, hasta llegar al nodo de salida:
 
 <p align="center">
-  <img src="Capitulo_3/Tema_3_7/P.png" alt="Diagrama de una neurona artificial mostrando nodos de entrada, pesos, sumatoria, función de activación y nodo de salida" width="350px">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/P.png?raw=true" alt="Diagrama de una neurona artificial mostrando nodos de entrada, pesos, sumatoria, función de activación y nodo de salida" width="350px">
   <br>
   <em><b>Figura X:</b> Modelo de una neurona artificial (perceptrón).</em>
 </p>
