@@ -1,13 +1,10 @@
-
 ---
 layout: default
-title: "4.1 Algoritmo Evolutivo Continuo"
+title: "Algoritmo Epsilon-Greedy"
 parent: "Capítulo 4: Algoritmos Evolutivos"
 has_children: true
 nav_order: 1
 ---
-
-
 
 # El Dilema de Exploración vs. Explotación
 
