@@ -20,7 +20,7 @@ Para el funcionamiento del perceptrón, se consideran los siguientes componentes
 La respuesta de la neurona depende de la **función signo**, la cual actúa como un limitador rígido:
 
 <p align="center">
-  <img src="{{ site.baseurl }}/Capitulo_3/Tema_3_7/H.png" alt="Definición de la función matemática H(v)" width="250px">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_7/H.png?raw=true" alt="Definición de la función matemática H(v)" width="250px">
   <br>
   <em><b>Figura X:</b> Función H(v).</em>
 </p>
