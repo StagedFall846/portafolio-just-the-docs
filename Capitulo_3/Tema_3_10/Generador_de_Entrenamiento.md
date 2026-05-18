@@ -56,10 +56,10 @@ Se utilizan tres configuraciones de redes neuronales:
   <br><i>Arquitectura de la Red Feed-Forward (3 capas)</i>
 </p>
 
-[<p align="center">
-  <img src="{{ site.baseurl }}/Capitulo_1/Custom Neural Network.png" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
+<p align="center">
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10/Custom%20Neural%20Network.png?raw=true" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
   <br><i>Arquitectura de la Red Neuronal Personalizada</i>
-</p>](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10/Custom%20Neural%20Network.png)
+</p>
 
 
 
