@@ -116,6 +116,4 @@ function idx = torneo(fitness, t)
 end
 ```
 
-<a href="ejercicio1_aproximacion.m" class="btn" style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;">
-   Descargar ejercicio1_aproximacion.m
-</a>
+[Descargar algoritmo_evolutivo_continuo.m](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo4/Tema_4_11/algoritmo_evolutivo_continuo.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
