@@ -79,4 +79,4 @@ Describe las reglas generales que rigen el comportamiento del controlador inteli
 
 
 
-[Descargar modelo2_claseSemana5.fis](/assets/modelo2_claseSemana5.fis){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
+[Descargar modelo2_claseSemana5.slx](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_6/modelo2_claseSemana5.slx){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
