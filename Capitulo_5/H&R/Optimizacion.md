@@ -9,6 +9,7 @@ nav_order: 1
 ## Optimización de Funciones Polinomiales (MATLAB)
 
 **Proyecto:** Optimización: Hill Climbing vs Random Search
+
 **Objetivo general:** Analizar y comparar el comportamiento de dos algoritmos de búsqueda básica aplicados a la optimización (minimización) de una función objetivo polinomial de cuarto grado en MATLAB.
 
 ---
