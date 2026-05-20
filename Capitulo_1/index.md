@@ -5,7 +5,7 @@ nav_order: 2
 has_children: true
 ---
 
-# Contexto General del Capitulo 1: Avances en IA y Sistemas de Control
+# Capitulo 1: Avances en IA y Sistemas de Control
 
 Este capítulo establece los fundamentos teóricos de la inteligencia artificial y su aplicación práctica en la automatización, contrastando los métodos de control clásicos con las herramientas modernas de IA.
 
