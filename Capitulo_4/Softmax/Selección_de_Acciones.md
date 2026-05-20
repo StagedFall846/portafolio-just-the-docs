@@ -6,14 +6,26 @@ grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
 
+## Implementación de Softmax (MATLAB)
 
-## Selección de Acciones mediante Softmax (Multi-Armed Bandit)
+**Proyecto:** Simulación de Multi-Armed Bandit con Algoritmo Softmax
+**Objetivo general:** Implementar y analizar la estrategia de selección de acciones Softmax en un entorno de múltiples opciones, evaluando cómo el parámetro de temperatura ajusta dinámicamente el equilibrio entre exploración y explotación en MATLAB.
+
+---
+
+## Objetivos de la práctica
+- Implementar la función de distribución de Boltzmann (Softmax) para asignar probabilidades de selección a cada acción.
+- Analizar el impacto del parámetro de temperatura ($\tau$) en el comportamiento exploratorio del agente.
+- Simular el entorno del Multi-Armed Bandit empleando 4 máquinas con probabilidades de recompensa ocultas.
+- Prevenir errores de desbordamiento numérico (overflow) mediante la estabilización matemática de las estimaciones.
+
+---
+
+## Descripción del ejercicio
 
 El problema del **Multi-Armed Bandit** (el dilema de las máquinas tragamonedas o "bandidos multibrazo") representa uno de los desafíos fundamentales del Aprendizaje por Refuerzo (*Reinforcement Learning*): el equilibrio entre **exploración** (probar nuevas opciones para descubrir su potencial) y **explotación** (elegir la mejor opción conocida hasta el momento).
 
-En lugar de utilizar una estrategia rígida como $\epsilon$-greedy —que elige de forma puramente aleatoria al explorar—, la estrategia **Softmax** (basada en la distribución de Boltzmann) asigna a cada acción una probabilidad de selección proporcional al valor estimado de su recompensa $Q(A_i)$.
-
----
+En lugar de utilizar una estrategia rígida como $\epsilon$-greedy —que elige de forma puramente aleatoria al explorar—, la estrategia **Softmax** (basada en la distribución de Boltzmann) asigna a cada acción una probabilidad de selección proporcional al valor estimado de su recompensa $Q_t(a)$.
 
 ### El Modelo Matemático de Softmax
 
@@ -26,11 +38,11 @@ Donde las variables clave definen el comportamiento del agente:
 * **$Q_t(a)$:** Representa el valor estimado o recompensa promedio esperada de la acción $a$ hasta el momento actual.
 * **$\tau$ (tau):** Es el parámetro de temperatura que controla el grado de aleatoriedad del sistema:
   * Si $\tau \to \infty$, las probabilidades de todas las acciones se igualan, dando lugar a una **exploración puramente aleatoria**.
-  * Si $\tau \to 0$, el peso se concentra por completo en la acción con el valor de $Q$ más alto, convirtiéndose en una **explotación pura**.
+  * Si $\tau \to 0$, el peso se concentra por completo en la acción con el valor estimado más alto, convirtiéndose en una **explotación pura**.
 
 ---
 
-### Código en MATLAB: Simulación del Entorno
+## Código 
 
 Este script simula un entorno con **4 máquinas tragamonedas** donde cada una cuenta con una probabilidad real y oculta de entregar una recompensa. El algoritmo Softmax interactúa con ellas de manera autónoma para descubrir y explotar la alternativa óptima.
 
@@ -83,9 +95,9 @@ function softmax_multi_armed_bandit()
 
     % 4. Despliegue de Resultados en Consola
     fprintf('=== RESULTADOS DE LA SIMULACIÓN SOFTMAX ===\n\n');
-    fprintf('Valores Reales de las Máquinas:    [%s]\n', numstr(recompensas_reales, ' %.2f '));
-    fprintf('Valores Estimados por el Agente (Q): [%s]\n', numstr(Q, ' %.2f '));
-    fprintf('Número de veces que eligió cada una: [%s]\n\n', numstr(N, ' %d '));
+    fprintf('Valores Reales de las Máquinas:    [%s]\n', num2str(recompensas_reales, ' %.2f '));
+    fprintf('Valores Estimados por el Agente (Q): [%s]\n', num2str(Q, ' %.2f '));
+    fprintf('Número de veces que eligió cada una: [%s]\n\n', num2str(N, ' %d '));
     
     [~, mejor_maquina] = max(Q);
     fprintf('El agente determinó que la mejor máquina es la: A%d\n', mejor_maquina);
