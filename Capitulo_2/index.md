@@ -5,7 +5,7 @@ nav_order: 3
 has_children: true
 ---
 
-# Introducción a los Sistemas Difusos
+# Capitulo 2: Introducción a los Sistemas Difusos
 
 Este capítulo introduce la lógica difusa como una alternativa a la lógica booleana tradicional, permitiendo modelar matemáticamente la incertidumbre y el razonamiento humano para controlar sistemas complejos que no cuentan con un modelo analítico exacto.
 
