@@ -1,8 +1,9 @@
 ---
 layout: default
-title: "Capítulo 5: Algortimos geneticos y evolutivos"
+title: "5.1 Búsqueda Básica"
+parent: "Capítulo 5: Algoritmos Genéticos y Evolutivos"
 has_children: true
-nav_order: 6
+nav_order: 1
 ---
 
 # Algoritmos Genéticos y Optimización Evolutiva
