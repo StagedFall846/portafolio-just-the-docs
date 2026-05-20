@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 
-# Aprendizaje por Refuerzo (RL)
+#  Capitulo 4: Aprendizaje por Refuerzo (RL)
 
 Esta sección expande el panorama de la inteligencia artificial hacia el control interactivo: cómo un agente autónomo aprende a tomar decisiones óptimas en un entorno desconocido a base de prueba, error y recompensas (*Model-Free learning*).
 
