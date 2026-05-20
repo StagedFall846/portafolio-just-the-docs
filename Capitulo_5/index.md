@@ -1,13 +1,11 @@
 ---
 layout: default
-title: "5.1 Búsqueda Básica"
-parent: "Capítulo 5: Algoritmos Genéticos y Evolutivos"
+title: "Capítulo 5: Algoritmos Genéticos y Evolutivos"
 has_children: true
-nav_order: 1
+nav_order: 6
 ---
 
-# Algoritmos Genéticos y Optimización Evolutiva
-
+# Capítulo 5: Algoritmos Genéticos y Evolutivos
 Este capítulo establece las bases matemáticas y computacionales para resolver problemas complejos de ingeniería donde las ecuaciones tradicionales se quedan cortas, utilizando la evolución biológica como motor de búsqueda.
 
 ## 1. Fundamentos de Optimización
