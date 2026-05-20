@@ -9,6 +9,8 @@ nav_order: 1
 ## Algoritmo $\epsilon$-Greedy con Inicio Optimista (MATLAB)
 
 **Proyecto:** Algoritmo $\epsilon$-Greedy con Inicio Optimista para el Problema del K-Armed Bandit
+
+
 **Objetivo general:** Evaluar el comportamiento y rendimiento de la estrategia de inicio optimista en un problema de decisión secuencial (multi-armed bandit) de 3 brazos, analizando la tasa de exploración inicial y la convergencia hacia la recompensa óptima en MATLAB.
 
 ---
