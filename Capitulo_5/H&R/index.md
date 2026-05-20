@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "5.1 Búsqueda Básica"
+title: "Búsqueda Básica"
 parent: "Capítulo 5: Algoritmos Genéticos y Evolutivos"
 has_children: true
 nav_order: 1
