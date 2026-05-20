@@ -10,6 +10,7 @@ nav_order: 1
 ## Algoritmo UCB (Upper Confidence Bound) (MATLAB)
 
 **Proyecto:** Implementación del Algoritmo UCB para el Problema del K-Armed Bandit
+
 **Objetivo general:** Evaluar el comportamiento del algoritmo UCB, el cual basa su estrategia de exploración en la evaluación de la incertidumbre y el potencial estimado de las acciones, logrando una adaptación automática entre exploración y explotación en un entorno simulado de MATLAB.
 
 ---
