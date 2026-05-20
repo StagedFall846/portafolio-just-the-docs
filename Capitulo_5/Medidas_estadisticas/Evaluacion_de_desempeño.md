@@ -10,6 +10,7 @@ nav_order: 1
 ## Evaluación de Desempeño (MATLAB)
 
 **Proyecto:** Algoritmo Genético Básico con Codificación Binaria
+
 **Objetivo general:** Integrar todas las fases de un Algoritmo Genético clásico empleando codificación binaria para la optimización de una función matemática, evaluando su rendimiento estadístico y convergencia computacional en MATLAB.
 
 ---
