@@ -6,7 +6,6 @@ grand_parent: "Capítulo 5: Algoritmos Genéticos y Evolutivos"
 nav_order: 1
 ---
 
-
 ## Optimización de Funciones Polinomiales
 
 En este ejercicio clásico de fundamentos de optimización, se analiza el comportamiento de dos algoritmos de búsqueda aplicados a una función objetivo polinomial de cuarto grado:
