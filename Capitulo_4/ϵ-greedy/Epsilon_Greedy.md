@@ -6,7 +6,6 @@ grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
 
-
 ## El Modelo Matemático
 
 ### 1. Cálculo de la estimación $Q_t(a)$
@@ -107,7 +106,6 @@ function graficar_evolucion(historial_Q, num_acciones)
     legend(leyendas, 'Location', 'southeast');
     grid on;
 end
-
 
 ```
 
