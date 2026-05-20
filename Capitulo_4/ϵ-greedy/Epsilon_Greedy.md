@@ -6,6 +6,7 @@ grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
 
+
 ## El Modelo Matemático
 
 ### 1. Cálculo de la estimación $Q_t(a)$
@@ -80,7 +81,7 @@ function epsilon_greedy_bandit()
 
     % 4. Despliegue de Resultados en Consola
     fprintf('=== RESULTADOS DE LA SIMULACIÓN EPSILON-GREEDY ===\n\n');
-    fprintf('Valores Reales de las Máquinas:     [%s]\n', num2str(recompensas_reales, ' %.2f '));
+    fprintf('Valores Reales de las Máquinas:    [%s]\n', num2str(recompensas_reales, ' %.2f '));
     fprintf('Valores Estimados por el Agente (Q): [%s]\n', num2str(Q, ' %.2f '));
     fprintf('Número de veces que eligió cada una: [%s]\n\n', num2str(N, ' %d '));
     
@@ -106,6 +107,8 @@ function graficar_evolucion(historial_Q, num_acciones)
     legend(leyendas, 'Location', 'southeast');
     grid on;
 end
+
+
 ```
 
 
