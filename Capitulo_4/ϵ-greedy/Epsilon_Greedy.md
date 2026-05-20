@@ -107,4 +107,6 @@ function graficar_evolucion(historial_Q, num_acciones)
     grid on;
 end
 ```
-[Descargar](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_4/algoritmo_epsilon_greedy/Algoritmo_e_greedy.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
+
+
+[Descargar epsilon_greedy_bandit.m](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_4/%CF%B5-greedy/epsilon_greedy_bandit.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
