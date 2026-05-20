@@ -6,6 +6,7 @@ grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
 
+
 ## Selección de Acciones mediante Softmax (Multi-Armed Bandit)
 
 El problema del **Multi-Armed Bandit** (el dilema de las máquinas tragamonedas o "bandidos multibrazo") representa uno de los desafíos fundamentales del Aprendizaje por Refuerzo (*Reinforcement Learning*): el equilibrio entre **exploración** (probar nuevas opciones para descubrir su potencial) y **explotación** (elegir la mejor opción conocida hasta el momento).
@@ -82,9 +83,9 @@ function softmax_multi_armed_bandit()
 
     % 4. Despliegue de Resultados en Consola
     fprintf('=== RESULTADOS DE LA SIMULACIÓN SOFTMAX ===\n\n');
-    fprintf('Valores Reales de las Máquinas:     [%s]\n', num2str(recompensas_reales, ' %.2f '));
-    fprintf('Valores Estimados por el Agente (Q): [%s]\n', num2str(Q, ' %.2f '));
-    fprintf('Número de veces que eligió cada una: [%s]\n\n', num2str(N, ' %d '));
+    fprintf('Valores Reales de las Máquinas:    [%s]\n', numstr(recompensas_reales, ' %.2f '));
+    fprintf('Valores Estimados por el Agente (Q): [%s]\n', numstr(Q, ' %.2f '));
+    fprintf('Número de veces que eligió cada una: [%s]\n\n', numstr(N, ' %d '));
     
     [~, mejor_maquina] = max(Q);
     fprintf('El agente determinó que la mejor máquina es la: A%d\n', mejor_maquina);
