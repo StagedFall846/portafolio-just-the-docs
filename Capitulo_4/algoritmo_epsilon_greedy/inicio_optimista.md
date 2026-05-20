@@ -33,19 +33,17 @@ El modelo simula el problema de las **3 máquinas (brazos)** definidas con difer
 
 La fórmula matemática aplicada en cada iteración es:
 
-\[
-Q_{t+1}(a) = Q_t(a) + \frac{1}{n_t(a)}(R_{t+1} - Q_t(a))
-\]
+$$Q_{t+1}(a) = Q_t(a) + \frac{1}{n_t(a)}(R_{t+1} - Q_t(a))$$
 
 ---
 
 ### Configuración del Entorno de Prueba (Máquinas)
 
-| Acción / Brazo | Media Real (\(\mu\)) | Desviación Estándar (\(\sigma\)) | Comportamiento Esperado |
+| Acción / Brazo | Media Real ($\mu$) | Desviación Estándar ($\sigma$) | Comportamiento Esperado |
 | :--- | :--- | :--- | :--- |
-| Brazo 1 (\(A_1\)) | 1.0 | 0.5 | Recompensa baja, baja variabilidad |
-| Brazo 2 (\(A_2\)) | 2.0 | 0.5 | **Brazo Óptimo** (\(Q^* = 2.0\)) |
-| Brazo 3 (\(A_3\)) | 1.5 | 1.5 | Recompensa media, alta variabilidad |
+| Brazo 1 ($A_1$) | 1.0 | 0.5 | Recompensa baja, baja variabilidad |
+| Brazo 2 ($A_2$) | 2.0 | 0.5 | **Brazo Óptimo** ($Q^* = 2.0$) |
+| Brazo 3 ($A_3$) | 1.5 | 1.5 | Recompensa media, alta variabilidad |
 
 ---
 
@@ -57,7 +55,7 @@ El algoritmo implementado en MATLAB ejecuta un ciclo iterativo a lo largo de **1
 3. Al interactuar con el entorno, calcula de forma dinámica las nuevas estimaciones utilizando la fórmula del promedio incremental.
 4. Al concluir las iteraciones, genera una gráfica comparativa que muestra:
    - La **recompensa promedio acumulada** calculada mediante una suma acumulativa normalizada (`cumsum`).
-   - Una línea de referencia horizontal que marca el **valor óptimo real esperado** (\(Q^* = 2.0\)).
+   - Una línea de referencia horizontal que marca el **valor óptimo real esperado** ($Q^* = 2.0$).
 
 ---
 
