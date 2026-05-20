@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Algoritmos de Búsqueda Básica"
-parent: "5.1 Búsqueda Básica"
+parent: "Búsqueda Básica"
 grand_parent: "Capítulo 5: Algoritmos Genéticos y Evolutivos"
 nav_order: 1
 ---
