@@ -6,7 +6,24 @@ grand_parent: "Capítulo 4: Algoritmos Evolutivos"
 nav_order: 1
 ---
 
-## El Modelo Matemático
+## Implementación de $\epsilon$-greedy (MATLAB)
+
+**Proyecto:** Simulación de Multi-Armed Bandit con Algoritmo $\epsilon$-greedy
+**Objetivo general:** Implementar y analizar la política $\epsilon$-greedy para resolver el dilema de exploración-explotación en un entorno de múltiples opciones, evaluando su rendimiento y actualización de valores mediante simulaciones en MATLAB.
+
+---
+
+## Objetivos de la práctica
+- Calcular la estimación del valor de acción ($Q_t(a)$) utilizando la regla de actualización de promedios incrementales.
+- Implementar una política de selección de acciones basada en una probabilidad constante $\epsilon$ para equilibrar exploración y explotación.
+- Simular el entorno clásico del Multi-Armed Bandit empleando 4 máquinas con probabilidades de recompensa fijas y ocultas.
+- Visualizar la evolución de las estimaciones del valor y la convergencia del algoritmo hacia la opción óptima.
+
+---
+
+## Descripción del ejercicio
+
+Este ejercicio aborda el problema de toma de decisiones secuenciales mediante el modelo matemático del algoritmo $\epsilon$-greedy.
 
 ### 1. Cálculo de la estimación $Q_t(a)$
 
@@ -28,9 +45,9 @@ $$\text{Acción} = \begin{cases} \arg\max_a Q_t(a) & \text{con probabilidad } 1 
 
 ---
 
-## Código en MATLAB: Simulación de Multi-Armed Bandit con $\epsilon$-greedy
+## Código 
 
-Este código implementa exactamente la misma estructura y las mismas 4 máquinas del ejercicio anterior para que puedas comparar de manera directa cómo difiere el comportamiento de búsqueda de ambos algoritmos.
+Este código en MATLAB simula la estructura con las 4 máquinas definidas para observar el comportamiento de búsqueda del algoritmo.
 
 ```matlab
 function epsilon_greedy_bandit()
