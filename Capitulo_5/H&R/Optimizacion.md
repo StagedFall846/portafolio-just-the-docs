@@ -6,7 +6,22 @@ grand_parent: "Capítulo 5: Algoritmos Genéticos y Evolutivos"
 nav_order: 1
 ---
 
-## Optimización de Funciones Polinomiales
+## Optimización de Funciones Polinomiales (MATLAB)
+
+**Proyecto:** Optimización: Hill Climbing vs Random Search
+**Objetivo general:** Analizar y comparar el comportamiento de dos algoritmos de búsqueda básica aplicados a la optimización (minimización) de una función objetivo polinomial de cuarto grado en MATLAB.
+
+---
+
+## Objetivos de la práctica
+- Implementar el algoritmo de escalada de colinas (Hill Climbing) para encontrar mínimos locales.
+- Implementar el algoritmo de búsqueda aleatoria (Random Search) para encontrar el mínimo global.
+- Evaluar el desempeño de estrategias de optimización local frente a optimización global.
+- Visualizar la convergencia y los resultados obtenidos por ambos métodos sobre la gráfica de la función objetivo.
+
+---
+
+## Descripción del ejercicio
 
 En este ejercicio clásico de fundamentos de optimización, se analiza el comportamiento de dos algoritmos de búsqueda aplicados a una función objetivo polinomial de cuarto grado:
 
@@ -101,7 +116,7 @@ x_min_rs = x_rand(indice_min);
 fprintf('Mínimo (Random Search) en x = %.4f con f(x) = %.4f\n', x_min_rs, y_min_rs);
 plot(x_min_rs, y_min_rs, 'b*', 'MarkerSize', 10); % Graficar final RS
 
-legend('f(x)', 'Inicio Hill Climbing', 'Mínimo Hill Climbing', 'Mínimo Random Search', 'Location', 'North');
+legend('f(x)', 'Inicio Hill Climbing', 'Mínimo Hill Climbing', 'Mínimo Random Search', 'Location', 'North');46/portafolio-just-the-docs/blob/main/Capitulo_5/H%26R/hill_climbing_ejercicio.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
 ```
 
-[Descargar hill_climbing_ejercicio.m](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_5/H%26R/hill_climbing_ejercicio.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
+[Descargar](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_5/H%26R/hill_climbing_ejercicio.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
