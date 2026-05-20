@@ -27,8 +27,9 @@ nav_order: 1
 En este ejercicio clásico de fundamentos de optimización, se analiza el comportamiento de dos algoritmos de búsqueda aplicados a una función objetivo polinomial de cuarto grado:
 
 <p align="center">
-  <img src="[https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_3/Tema_3_10_6/Custom%20Neural%20Network.png?raw=true](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_5/H%26R/min.png)" width="90%" style="border: 2px solid #9673a6; border-radius: 10px;">
-  <br><i>Ejercicio</i>
+  <img src="https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_5/H%26R/min.png?raw=true" alt="Gráfica de la función polinomial f(x) mostrando un punto mínimo" width="450px">
+  <br>
+  <em><b>Figura X:</b> Gráfica de la función con punto mínimo.</em>
 </p>
 
 ### Conceptos Clave
