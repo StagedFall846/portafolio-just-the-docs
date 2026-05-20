@@ -150,4 +150,4 @@ function ga_ejercicio_maximizacion()
     grid on;
 end
 ```
-
+[Descargar](https://github.com/StagedFall846/portafolio-just-the-docs/blob/main/Capitulo_5/Medidas_estadisticas/ga_ejercicio_maximizacion.m){: .btn style="text-decoration: none; display: inline-block; background-color: #e1d5e7; color: #6a1b9a; border: 1px solid #9673a6;" }
